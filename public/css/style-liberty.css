@@ -606,16 +606,10 @@ progress {
 }
 
 .img-fluid {
-    max-width: auto;
+    max-width: 100%;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 20%;
-     transform: scale(1.2); /* Scale up by 10% */
-    transform-origin: center; /* Keep it centered */
+    display: block;
+    margin: 0 auto;
 }
 
 .img-thumbnail {
@@ -21491,22 +21485,22 @@ ul.gallery_agile li {
     position: relative;
 }
 
-.w3layouts_news_grid_pos {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgb(73 45 123 / 40%);
-    right: 0;
-    transition: all 400ms ease;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -o-border-radius: 6px;
-    -moz-border-radius: 6px;
-    display: grid;
-    align-items: center;
-}
+    .w3layouts_news_grid_pos {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(73 45 123 / 40%);
+        right: 0;
+        transition: all 400ms ease;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -o-border-radius: 6px;
+        -moz-border-radius: 6px;
+    display: none !important;
+        align-items: center;
+    }
 
 .w3layouts_news_grid_pos {
     transform: scale3d(0, 0, 1);
@@ -21516,6 +21510,7 @@ ul.gallery_agile li {
     opacity: 0.8;
     background-color: rgba(1, 28, 37, 0.5);
     transform: scale3d(1, 1, 1);
+        display: none !important;
 }
 
 .w3_agile_portfolio_grid:hover .wthree_text {
@@ -22997,12 +22992,15 @@ ul.twitter-feed a:hover {
     font-size: 18px;
     color: var(--heading-color);
 }
+
+
 .content-8-img img {
     max-height: 500px;  /* adjust as needed */
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
+
 
 .w3l-testimonials p.indentity {
     font-style: normal;
@@ -24555,21 +24553,106 @@ body {
                 font-size: 2rem;
             }
         }
-        
-        /* Custom for header/footer compatibility */
-        .nav-fixed {
-            background-color: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          /* Apply Poppins font globally for consistency */
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Clean Blog Card Styles */
+    .blog-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .blog-title {
+        font-weight: 600;
+        color: #1a1a1a;
+        position: relative;
+        padding-bottom: 10px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .blog-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, #8B7355, #D4B596);
+        border-radius: 2px;
+    }
+    
+    .blog-content-divider {
+        height: 1px;
+        background: linear-gradient(to right, #f0f0f0, #ddd, #f0f0f0);
+        width: 100%;
+    }
+    
+    .blog-excerpt {
+        color: #555;
+        font-size: 0.95rem;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .blog-date {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .blog-meta {
+        font-size: 0.85rem;
+        color: #888;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .blog-img-container img {
+        transition: transform 0.5s ease;
+    }
+    
+    .blog-card:hover .blog-img-container img {
+        transform: scale(1.03);
+    }
+    
+    .letter-spacing-2 {
+        letter-spacing: 2px;
+    }
+    
+    /* Clear visual separation between cards */
+    .g-4 > div {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Improved font weights for better hierarchy */
+    .fw-bold {
+        font-weight: 600 !important;
+    }
+    
+    .display-5 {
+        font-weight: 700 !important;
+    }
+    
+    @media (max-width: 768px) {
+        .display-5 {
+            font-size: 2rem;
         }
         
-        .w3yellow {
-            color: #ee9d1e !important;
+        .blog-title {
+            font-size: 1.2rem;
         }
         
-        .active .nav-link {
-            color: #ee9d1e !important;
+        .card-body {
+            padding: 1.5rem !important;
         }
-        
-        .footer-title-29 {
-            color: #ee9d1e;
-        }
+    }
