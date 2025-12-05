@@ -15,6 +15,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css:purge": "purgecss --css assets/css/*.css --content *.html **/*.html **/*.js --output assets/css/",
+    "css:minify": "cleancss -o assets/css/style.min.css assets/css/style.css"
+  },
+  "devDependencies": {
+    "purgecss": "^7.0.2"
   }
 }
