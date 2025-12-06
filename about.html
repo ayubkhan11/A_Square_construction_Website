@@ -5,66 +5,89 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ASQUARE - Services</title>  <!-- Only this changed -->
-    <!-- google fonts -->
+    <title>ASQUARE - Services</title>
+    
+    <!-- Critical CSS (inline) -->
+    <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background: #fff;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Basic utility classes */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.btn-style {
+  background: #8b7355;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn-style:hover {
+  background: #6d5d48;
+}
+
+.w3yellow {
+  color: #ffc107;
+}
+
+/* GAP REMOVAL UTILITIES */
+.no-gap {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+    </style>
+
+    <!-- Header CSS (loads immediately) -->
+    <link rel="stylesheet" href="/css/header.css">
+    
+    <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Template CSS -->
     <link rel="stylesheet" href="/css/style-liberty.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!--/Header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light stroke py-lg-0">
-                <h1><a class="navbar-brand pe-xl-5 pe-lg-4" href="index.html">
-        <span class="w3yellow">A</span><span>SQUARE</span>
-    </a></h1>   
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-lg-auto my-2 my-lg-0 navbar-nav-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="services.html">Services</a>  <!-- Only this changed -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--//Header-->
+    <!-- Header will be loaded dynamically by load-header.js -->
 
-    <!--/inner-page-->
-    <div class="inner-banner py-5">
-        <section class="w3l-breadcrumb text-left py-sm-5">
-            <div class="container">
-                <div class="w3breadcrumb-right">
-                    <ul class="breadcrumbs-custom-path">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><span class="fas fa-angle-double-right mx-2"></span> Services</li>  <!-- Only this changed -->
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!--//inner-page-->
-
-    <!-- Why Choose Us Section - 100% IDENTICAL TO ABOUT PAGE -->
+    <!-- Why Choose Us Section -->
     <section class="luxury-why-section">
     <div class="container">
         <h2 class="section-title">Why Choose A-Square Construction?</h2>   
@@ -79,7 +102,7 @@
         <!-- Card 2 -->
         <div class="feature-card">
             <div class="icon-wrapper">♛</div>
-            <h3 class="feature-title">Founded & Led by Zakir Hussain</h3>
+            <h3 class="feature-title">Founded & Led by K.P.Zakir Hussain</h3>
             <p class="feature-desc">Personal oversight by our founder ensures every project meets the highest standards of quality and client satisfaction.</p>
         </div>
 
@@ -182,12 +205,12 @@
         <div class="founder-content">
             <div class="text-container">
                 <p class="founder-description">
-                    Zakir Hussain, founder of A-Square Construction, 
+                    K.P.Zakir Hussain, founder of A-Square Construction, 
                     brings 10+ years of experience in premium residential and commercial projects. 
                     With 20+ completed projects and 100+ satisfied clients, he is known for excellence, 
-                    transparency, and timely delivery. Zakir’s expertise in modern construction and attention to detail make A-Square Construction a trusted name, 
+                    transparency, and timely delivery. Zakir's expertise in modern construction and attention to detail make A-Square Construction a trusted name, 
                     turning architectural visions into reality with precision and quality.</p>
-                <h3 class="founder-name">Zakir Hussain</h3>
+                <h3 class="founder-name">K.P.Zakir Hussain</h3>
                 <p class="founder-role">CEO & Founder</p>
             </div>
             
@@ -224,7 +247,7 @@
                             <ul class="footer-listw3">
                                 <li class="d-flex align-items-start mb-4">
                                     <span class="fas fa-map-marker-alt me-3 mt-1"></span>
-                                    <span>Phase 2, TriHB, MIO-128, near Vedikoa Child Care Hospital, Wahab Nagar, Krishnagiri, Tamil Nadu 635001</span>
+                                    <span>Phase 2, TNHB, MIG-128, near Vedikaa Child Care Hospital, Wahab Nagar, Krishnagiri, Tamil Nadu 635001</span>
                                 </li>
                                 <li class="d-flex align-items-start mb-4">
                                     <span class="fas fa-phone-alt me-3 mt-1"></span>
@@ -293,50 +316,34 @@
             <span class="fa fa-angle-up"></span>
         </button>
     </footer>
-    <!-- Template JavaScript -->
+
+    <!-- ====== SCRIPTS ====== -->
     <script src="/js/jquery-3.3.1.min.js"></script>
-    <!-- MENU-JS -->
-    <script>
-        $(window).on("scroll", function() {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function() {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function() {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-
-    </script>
-    <!-- //MENU-JS -->
-
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-        $(function() {
-            $('.navbar-toggler').click(function() {
-                $('body').toggleClass('noscroll');
-            })
-        });
-
-    </script>
-    <!-- //disable body scroll which navbar is in active -->
-    <!-- //bootstrap -->
     <script src="/js/bootstrap.min.js"></script>
+    
+    <!-- Header Loader Script -->
+    <script src="/js/load-header.js"></script>
+    
+    <!-- Page Specific Scripts -->
+    <script>
+        // Move to top function
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        
+        // Add active class to nav on scroll (if needed)
+        window.addEventListener('scroll', function() {
+            var scroll = window.scrollY;
+            var header = document.getElementById('site-header');
+            
+            if (scroll >= 80) {
+                if (header) header.classList.add('nav-fixed');
+            } else {
+                if (header) header.classList.remove('nav-fixed');
+            }
+        });
+    </script>
 
 </body>
 

@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ASQUARE - Gallery </title>
+
+     <!-- Header CSS (loads immediately) -->
+    <link rel="stylesheet" href="/css/header.css">
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Template CSS -->
@@ -14,55 +17,6 @@
 </head>
 
 <body>
-    <!--/Header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light stroke py-lg-0">
-                <h1><a class="navbar-brand pe-xl-5 pe-lg-4" href="index.html">
-    <span class="w3yellow">A</span><span>SQUARE</span>
-</a></h1>   
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-lg-auto my-2 my-lg-0 navbar-nav-scroll">
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a> <!-- Removed 'active' class -->
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="gallery.html">Gallery</a> <!-- Added 'active' class -->
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="services.html">Services</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact</a>
-    </li>
-</ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--//Header-->
-
-    <!--/inner-page-->
-    <div class="inner-banner py-5">
-        <section class="w3l-breadcrumb text-left py-sm-5">
-            <div class="container">
-                <div class="w3breadcrumb-right">
-                    <ul class="breadcrumbs-custom-path">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><span class="fas fa-angle-double-right mx-2"></span> Gallery</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!--//inner-page-->
 
    <div class="container">
             <div class="page-title">
@@ -146,97 +100,98 @@
     </div>
 
     <!--/w3l-footer-29-main-->
- <footer class="w3l-footer-29-main">
-    <div class="footer-29 py-3 w-100">
-        <div class="container-fluid py-lg-4 px-0">
-            <div class="row footer-top-29 mx-0">
+    <footer class="w3l-footer-29-main">
+        <div class="footer-29 py-3 w-100">
+            <div class="container-fluid py-lg-4 px-0">
+                <div class="row footer-top-29 mx-0">
 
-                <!-- Column 1: ASQUARE Info -->
-                <div class="col-lg-3 col-md-6 footer-list-29 footer-1 pe-lg-5 ps-lg-5">
-                    <h2 class="mb-4"><a class="navbar-brand" href="index.html" style="text-decoration: none;">
-                        <span class="w3yellow">ASQUARE</span></a>
-                    </h2>
-                    <p class="parahny pr-lg-5 mr-xl-4 mb-4" style="line-height: 1.8;">
-                        A Square Construction, founded in 2014 by Zakir Hussein, is a trusted construction company delivering high-quality residential and commercial projects.
-                    </p>
-                </div>
-
-                <!-- Column 2: Get In Touch -->
-                <div class="col-lg-3 col-md-6 footer-list-29 footer-2 mt-lg-0 mt-5 pe-lg-5">
-                    <h6 class="footer-title-29 mb-4">Get In Touch</h6>
-                    <div class="footer-listw3-grids">
-                        <ul class="footer-listw3">
-                            <li class="d-flex align-items-start mb-4">
-                                <span class="fas fa-map-marker-alt me-3 mt-1"></span>
-                                <span>Phase 2, TriHB, MIO-128, near Vedikoa Child Care Hospital, Wahab Nagar, Krishnagiri, Tamil Nadu 635001</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-4">
-                                <span class="fas fa-phone-alt me-3 mt-1"></span>
-                                <span>+91 9940792792</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-4">
-                                <span class="fas fa-envelope me-3 mt-1"></span>
-                                <span>asquareconstruction12@gmail.com</span>
-                            </li>
-                        </ul>
+                    <!-- Column 1: ASQUARE Info -->
+                    <div class="col-lg-3 col-md-6 footer-list-29 footer-1 pe-lg-5 ps-lg-5">
+                        <h2 class="mb-4"><a class="navbar-brand" href="index.html" style="text-decoration: none;">
+                            <span class="w3yellow">ASQUARE</span></a>
+                        </h2>
+                        <p class="parahny pr-lg-5 mr-xl-4 mb-4" style="line-height: 1.8;">
+                            A Square Construction, founded in 2014 by Zakir Hussein, is a trusted construction company delivering high-quality residential and commercial projects.
+                        </p>
                     </div>
-                </div>
 
-                <!-- Column 3: Our Top Services -->
-                <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mt-lg-0 mt-5 ps-lg-4">
-                    <h6 class="footer-title-29 mb-4">Our Top Services</h6>
-                    <div class="footer-listw3-grids">
-                        <ul class="footer-listw3 p-0 m-0" style="list-style: none;">
-                            <li class="mb-3 d-flex align-items-center">
-                                <span class="fas fa-drafting-compass me-2 flex-shrink-0"></span>
-                                <span class="text-nowrap">Plan 2D & 3D</span>
-                            </li>
-                            <li class="mb-3 d-flex align-items-center">
-                                <span class="fas fa-cube me-2 flex-shrink-0"></span>
-                                <span class="text-nowrap">Structure Design</span>
-                            </li>
-                            <li class="mb-3 d-flex align-items-center">
-                                <span class="fas fa-paint-roller me-2 flex-shrink-0"></span>
-                                <span class="text-nowrap">Interior & Exterior Design</span>
-                            </li>
-                            <li class="mb-3 d-flex align-items-center">
-                                <span class="fas fa-tools me-2 flex-shrink-0"></span>
-                                <span class="text-nowrap">Building Renovation</span>
-                            </li>
-                            <li class="mb-3 d-flex align-items-center">
-                                <span class="fas fa-building me-2 flex-shrink-0"></span>
-                                <span class="text-nowrap">Architectural Design</span>
-                            </li>
-                        </ul>
+                    <!-- Column 2: Get In Touch -->
+                    <div class="col-lg-3 col-md-6 footer-list-29 footer-2 mt-lg-0 mt-5 pe-lg-5">
+                        <h6 class="footer-title-29 mb-4">Get In Touch</h6>
+                        <div class="footer-listw3-grids">
+                            <ul class="footer-listw3">
+                                <li class="d-flex align-items-start mb-4">
+                                    <span class="fas fa-map-marker-alt me-3 mt-1"></span>
+                                    <span>Phase 2, TNHB, MIG-128, near Vedikaa Child Care Hospital, Wahab Nagar, Krishnagiri, Tamil Nadu 635001</span>
+                                </li>
+                                <li class="d-flex align-items-start mb-4">
+                                    <span class="fas fa-phone-alt me-3 mt-1"></span>
+                                    <span>+91 9940792792</span>
+                                </li>
+                                <li class="d-flex align-items-start mb-4">
+                                    <span class="fas fa-envelope me-3 mt-1"></span>
+                                    <span>asquareconstruction12@gmail.com</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Column 4: Keep Connected -->
-                <div class="col-lg-3 col-md-6 footer-list-29 footer-4 mt-lg-0 mt-5 pe-lg-5">
-                    <h6 class="footer-title-29 mb-4">Keep Connected</h6>
-                    <p class="mb-4" style="line-height: 1.6;">Get Updates By Following Us On Social Media</p>
-
-                    <div class="main-social-footer-29 mt-4">
-                        <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-facebook-f"></span></a>
-                        <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-instagram"></span></a>
-                        <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-google-plus-g"></span></a>
-                        <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-linkedin-in"></span></a>
+                    <!-- Column 3: Our Top Services -->
+                    <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mt-lg-0 mt-5 ps-lg-4">
+                        <h6 class="footer-title-29 mb-4">Our Top Services</h6>
+                        <div class="footer-listw3-grids">
+                            <ul class="footer-listw3 p-0 m-0" style="list-style: none;">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="fas fa-drafting-compass me-2 flex-shrink-0"></span>
+                                    <span class="text-nowrap">Plan 2D & 3D</span>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="fas fa-cube me-2 flex-shrink-0"></span>
+                                    <span class="text-nowrap">Structure Design</span>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="fas fa-paint-roller me-2 flex-shrink-0"></span>
+                                    <span class="text-nowrap">Interior & Exterior Design</span>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="fas fa-tools me-2 flex-shrink-0"></span>
+                                    <span class="text-nowrap">Building Renovation</span>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="fas fa-building me-2 flex-shrink-0"></span>
+                                    <span class="text-nowrap">Architectural Design</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <!-- Column 4: Keep Connected -->
+                    <div class="col-lg-3 col-md-6 footer-list-29 footer-4 mt-lg-0 mt-5 pe-lg-5">
+                        <h6 class="footer-title-29 mb-4">Keep Connected</h6>
+                        <p class="mb-4" style="line-height: 1.6;">Get Updates By Following Us On Social Media</p>
+
+                        <div class="main-social-footer-29 mt-4">
+                            <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-facebook-f"></span></a>
+                            <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-instagram"></span></a>
+                            <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-google-plus-g"></span></a>
+                            <a href="#" class="mx-2" style="text-decoration: none; font-size: 1.2rem;"><span class="fab fa-linkedin-in"></span></a>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="bottom-copies text-center pt-4 mt-4 border-top" style="padding-bottom:25px;">
-                <p class="copy-footer-29">© 2025 ASQUARE. All rights reserved.</p>
+                <div class="bottom-copies text-center pt-4 mt-4 border-top" style="padding-bottom:25px;">
+                    <p class="copy-footer-29">© 2025 ASQUARE. All rights reserved.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- MOVE TOP BUTTON -->
-    <button onclick="topFunction()" id="movetop" title="Go to top" style="cursor: pointer; border: none; background: none;">
-        <span class="fa fa-angle-up"></span>
-    </button>
-</footer>
+        <!-- MOVE TOP BUTTON -->
+        <button onclick="topFunction()" id="movetop" title="Go to top" style="cursor: pointer; border: none; background: none;">
+            <span class="fa fa-angle-up"></span>
+        </button>
+    </footer>
+
     <!-- Template JavaScript -->
     <script src="/js/jquery-3.3.1.min.js"></script>
     <!-- MENU-JS -->
@@ -361,7 +316,8 @@
         }
     });
 </script>
-
+<!-- header page -->
+<script src="/js/load-header.js"></script>
 </body>
 
 </html>

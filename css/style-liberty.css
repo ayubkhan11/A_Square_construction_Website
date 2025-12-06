@@ -493,6 +493,7 @@ progress {
     margin-left: auto
 }
 
+
 @media (min-width:576px) {
 
     .container {
@@ -909,7 +910,10 @@ textarea.form-control {
    .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding-top: 40px !important;
+            padding-bottom: 20px;
+            margin-top: 0 !important;
+            margin-bottom: 20px;
         }
 
         /* Hero Section - Perfectly Centered Text */
@@ -960,6 +964,7 @@ textarea.form-control {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            padding-top: 20px !important;
         }
 
         @media (max-width: 768px) {
@@ -3803,7 +3808,7 @@ header.nav-fixed {
     font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: black;
     margin: 0;
 }
 
@@ -4260,7 +4265,7 @@ a.dropdown-item.active {
 }
 
 .w3l-main-slider .banner-view {
-    background: url(../images/banner1.avif) no-repeat center;
+    background: url(../images/banner1.webp) no-repeat center;
     -ms-background-size: cover;
     background-size: cover;
     z-index: 0;
@@ -4272,13 +4277,43 @@ a.dropdown-item.active {
 }
 
 .w3l-main-slider .banner-top2 {
-    background: url(../images/banner2.avif) no-repeat center;
+    background: url(../images/banner2.webp) no-repeat center;
     background-size: cover;
 }
 
 .w3l-main-slider .banner-top3 {
-    background: url(../images/banner3.avif) no-repeat center;
+    background: url(../images/banner3.webp) no-repeat center;
     background-size: cover;
+}
+/* Prevent CLS + make hero full viewport */
+.w3l-main-slider { 
+  min-height: 100vh; 
+  margin: 0; 
+  padding: 0;
+}
+.w3l-main-slider picture,
+.w3l-main-slider img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16/9;            /* locks the ratio → zero layout shift */
+}
+
+/* Optional dark overlay (most hero sliders have it) */
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Text stays perfectly centered */
+.banner-info {
+  z-index: 2;
+}
+.title-hero-19 {
+  font-family: 'Poppins', Arial, sans-serif !important; /* instant fallback */
 }
 
 .w3l-main-slider .banner-view:before {
@@ -4444,6 +4479,15 @@ a.btn.btn-style.btn-banner:hover {
 
 }
 
+/* NUCLEAR – REMOVE ALL POSSIBLE OVERLAYS */
+*::before, *::after {
+  background-image: none !important;
+  background: transparent !important;
+}
+.w3l-main-slider * {
+  background: transparent !important;
+}
+
 /*--/owl-slider--*/
 /**
  * Owl Carousel v2.3.4
@@ -4456,68 +4500,21 @@ a.btn.btn-style.btn-banner:hover {
     position: relative;
 }
 
+.owl-carousel,
+.owl-stage-outer,
+.owl-stage,
+.owl-item {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .owl-carousel {
-    display: none;
+    display: block !important;
     width: 100%;
 }
 
-.owl-carousel .owl-stage {
-    position: relative;
-    touch-action: manipulation;
-    -moz-backface-visibility: hidden;
-}
-
-.owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-
-.owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-}
-
-.owl-carousel .owl-item {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-}
-
-.owl-carousel .owl-item {
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-touch-callout: none;
-}
-
-.owl-carousel .owl-dots.disabled,
-.owl-carousel .owl-nav.disabled {
-    display: block;
-}
-
-
 .owl-carousel.owl-loaded {
     display: block;
-}
-
-.owl-carousel .owl-dot,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-nav .owl-prev {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel button.owl-dot {
-    border: none;
 }
 
 .owl-carousel.owl-loading {
@@ -4555,6 +4552,55 @@ a.btn.btn-style.btn-banner:hover {
     float: right;
 }
 
+.slider-image-wrapper {
+    background-color: #000;
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+}
+
+.owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-touch-callout: none;
+}
+
+.owl-carousel .owl-dot,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    border: none;
+}
+
 .owl-carousel .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -4576,23 +4622,13 @@ a.btn.btn-style.btn-banner:hover {
 }
 
 @-webkit-keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .owl-height {
@@ -4659,25 +4695,11 @@ a.btn.btn-style.btn-banner:hover {
     width: 100%;
 }
 
-@media (max-width: 992px) {
-    .owl-theme .owl-nav {
-        display: none !important;
-    }
-}
-
-@media (max-width: 568px) {
-
-    .owl-carousel .owl-dots.disabled,
-    .owl-carousel .owl-nav.disabled {
-        display: none;
-    }
-}
-
 /**
-   * Owl Carousel v2.3.4
-   * Copyright 2013-2018 David Deutsch
-   * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
-   */
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
 .owl-theme .owl-dots,
 .owl-theme .owl-nav {
     text-align: center;
@@ -4685,27 +4707,6 @@ a.btn.btn-style.btn-banner:hover {
 }
 
 .owl-theme .owl-nav {
-    display: block;
-}
-
-.owl-dots {
-    margin-top: 0px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto;
-    text-align: center;
-    bottom: 40px;
-    background: none;
-}
-
-.w3l-testimonials .owl-dots {
-    margin-top: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -30px;
-    background: none;
     display: block;
 }
 
@@ -4746,11 +4747,6 @@ a.btn.btn-style.btn-banner:hover {
     cursor: default;
 }
 
-.owl-theme .owl-nav.disabled + .owl-dots {
-    margin-top: 30px;
-    display: none;
-}
-
 .owl-theme .owl-dots .owl-dot {
     display: inline-block;
     zoom: 1;
@@ -4769,6 +4765,206 @@ a.btn.btn-style.btn-banner:hover {
     border-radius: 50%;
 }
 
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--secondary-color);
+}
+
+.owl-dots {
+    margin-top: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    bottom: 40px;
+    background: none;
+}
+
+/* Updated CSS with better edge spacing */
+.w3l-testimonials .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Container padding */
+}
+
+/* For tablets and larger */
+@media (min-width: 768px) {
+    .w3l-testimonials .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0; /* Remove container padding on larger screens */
+    }
+}
+
+/* For desktops */
+@media (min-width: 992px) {
+    .w3l-testimonials .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+.w3l-testimonials .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 30px; /* Increased padding: 35px top/bottom, 30px left/right */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    .w3l-testimonials .testimonials-grid {
+        gap: 20px;
+    }
+    
+    .w3l-testimonials .testimonial-card {
+        padding: 30px 25px; /* Good mobile padding */
+        margin: 0;
+    }
+    
+    /* Ensure all text elements have proper side margins */
+    .w3l-testimonials .testimonial-gds-1 {
+        margin-bottom: 25px;
+        padding: 0 5px; /* Add side padding to name/address area */
+    }
+    
+    .w3l-testimonials .quote-container {
+        min-height: 100px;
+        padding: 20px 0; /* Vertical padding for quote area */
+    }
+    
+    .w3l-testimonials .quote-info {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        font-style: italic;
+        color: #555;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        padding: 0 10px; /* Add side padding to quote text */
+        box-sizing: border-box;
+    }
+    
+    .w3l-testimonials .peopl h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+        padding: 0 5px; /* Add side padding to name */
+    }
+    
+    .w3l-testimonials .indentity {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        padding: 0 5px; /* Add side padding to location */
+        color: #777;
+    }
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+    .w3l-testimonials .testimonial-card {
+        padding: 40px 35px; /* More padding on larger screens */
+    }
+    
+    .w3l-testimonials .testimonial-gds-1 {
+        margin-bottom: 30px;
+        padding: 0 10px; /* Side padding for name/address */
+    }
+    
+    .w3l-testimonials .quote-container {
+        min-height: 140px;
+        padding: 25px 0;
+    }
+    
+    .w3l-testimonials .quote-info {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        padding: 0 15px; /* Side padding for quote */
+    }
+    
+    .w3l-testimonials .peopl h3 {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+    
+    .w3l-testimonials .indentity {
+        font-size: 1.05rem;
+        padding: 0 10px;
+    }
+}
+
+/* Hover effects */
+.w3l-testimonials .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Core layout */
+.w3l-testimonials .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.w3l-testimonials .quote-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Quote icon styling */
+.w3l-testimonials .quote-info i.fa-quote-left,
+.w3l-testimonials .quote-info i.fa-quote-right {
+    color: #fe5a0e;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    margin: 0 8px;
+}
+
+/* Ensure all text has minimum side spacing */
+.w3l-testimonials .testimonial-content > * {
+    box-sizing: border-box;
+}
+
+/* Add a max-width to prevent overly wide text lines */
+.w3l-testimonials .quote-info q {
+    display: inline-block;
+    max-width: 95%; /* Prevent text from stretching too wide */
+    margin: 0 auto;
+}
+
+.w3l-testimonials .owl-dots {
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    background: none;
+    display: block;
+}
+
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+    display: block;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 30px;
+    display: none;
+}
+
 button.owl-next,
 button.owl-prev {
     position: absolute;
@@ -4783,14 +4979,18 @@ button.owl-next {
     right: 10px;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: var(--secondary-color);
+@media (max-width: 992px) {
+    .owl-theme .owl-nav {
+        display: none !important;
+    }
 }
 
-@media (max-width:667px) {}
-
-/*--//owl-slider--*/
+@media (max-width: 568px) {
+    .owl-carousel .owl-dots.disabled,
+    .owl-carousel .owl-nav.disabled {
+        display: none;
+    }
+}
 /*--/video--*/
 
 /* Magnific Popup CSS */
@@ -5359,6 +5559,8 @@ p.counter {
 /*--//w3l-content-1--*/
 /*--/services--*/
 .w3l-services2 {
+    padding-top: 100px !important;
+    margin-top: 0 !important;
     background: var(--bg-color);
 }
 
@@ -6264,6 +6466,8 @@ ul.gallery_agile li {
     position: relative;
     overflow: hidden;
     text-align: center;
+    border: 1px solid #eee; /* Optional: for better visualization */
+    min-height: 220px;
 }
 
 .w3l-testimonials .testimonial {
@@ -6282,6 +6486,7 @@ ul.gallery_agile li {
     grid-template-columns: 1fr 5fr;
     grid-gap: 20px;
     align-items: center;
+    border-bottom: 1px solid #f0f0f0; /* ← This creates the line */
 }
 
 .w3l-testimonials blockquote q {
@@ -6322,7 +6527,7 @@ ul.gallery_agile li {
     font-weight: 400;
     line-height: 26px;
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     font-style: italic;
 }
 
@@ -6377,6 +6582,105 @@ ul.gallery_agile li {
     width: 100% !important;
     margin: 0 !important;
 }
+/* ===== FOOTER RESPONSIVE FIX ===== */
+
+footer {
+  width: 100%;
+}
+
+/* Parent container full width */
+.w3l-footer-29-main .footer-29 {
+  width: 100%;
+}
+
+/* Make columns responsive */
+.footer-top-29 .col-lg-3 {
+  margin-bottom: 30px;
+}
+
+/* On extra small screens */
+@media (max-width: 576px) {
+  .footer-top-29 {
+    padding: 0 15px !important;
+  }
+
+  .footer-top-29 .col-lg-3 {
+    width: 100%;
+  }
+
+  .footer-1,
+  .footer-2,
+  .footer-3,
+  .footer-4 {
+    text-align: left !important;
+  }
+
+  .footer-1 p,
+  .footer-2 ul,
+  .footer-3 ul,
+  .footer-4 p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .main-social-footer-29 a {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 992px) {
+  .footer-top-29 .col-md-6 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Desktop - even spacing */
+@media (min-width: 992px) {
+  .footer-top-29 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-top-29 .col-lg-3 {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .footer-top-29 .col-lg-3:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Back to top button */
+#movetop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 25px;
+}
+.footer-logo {
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-logo {
+        height: 35px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-logo {
+        height: 30px !important;
+        margin-right: 0.75rem !important;
+    }
+    
+    .navbar-brand span {
+        font-size: 1.5rem;
+    }
+}
 
 .container-fluid {
     max-width: 100% !important;
@@ -6421,7 +6725,7 @@ body {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 .owl-two.owl-theme .owl-dots .owl-dot.active span,
@@ -6466,6 +6770,8 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
+        color: #fff;
+        text-transform: capitalize;
     }
 
     /* SOCIAL ICONS */
@@ -6798,6 +7104,19 @@ div,
   transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(238,157,30,0.3);
 }
+.luxury-why-section,
+.luxury-why-section.luxury-why-section {   /* High specificity to win */
+    padding-top: 100px !important;
+    margin-top: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .luxury-why-section { padding-top: 120px !important; }
+}
+@media (max-width: 768px) {
+    .luxury-why-section { padding-top: 100px !important; }
+}
 
 .luxury-cta {
   text-align: center;
@@ -6812,7 +7131,7 @@ div,
   color: #EE9D1E;
   font-size: 48px;
   font-weight: 800;
-}
+}   
 .section-title {
   margin-top: 0px;   /* space under breadcrumb */
   margin-bottom: 15px; /* reduce gap before cards */
@@ -7407,6 +7726,8 @@ body {
         .page-title {
             text-align: center;
             margin-bottom: 50px;
+            padding-top: 110px !important;
+             margin-top: 0 !important;
         }
         
         .page-title h2 {

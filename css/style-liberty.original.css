@@ -19102,7 +19102,7 @@ a.btn.btn-style.btn-banner:hover {
 }
 
 .banner-w3l-media-title.img-vdohny {
-    background: url(../images/g3.jpg) no-repeat center;
+    background: url(../images/g3.avif) no-repeat center;
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -19669,7 +19669,7 @@ button.owl-next {
 /*--//owl-slider--*/
 /*--/video--*/
 .w3l-index5 {
-    background: url(../images/banner5.jpg) no-repeat center;
+    background: url(../images/banner5.avif) no-repeat center;
     -ms-background-size: cover;
     background-size: cover;
     z-index: 0;
@@ -20760,7 +20760,7 @@ p.para-counter {
 }
 
 .w3l-services3 .new-block.homenew-block {
-    background: url(../images/banner5.jpg) no-repeat;
+    background: url(../images/banner5.avif) no-repeat;
 }
 
 .w3l-services3 .middle-section {
