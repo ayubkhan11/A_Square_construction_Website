@@ -1,0 +1,41 @@
+{
+  "name": "asquareconstruction",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ayubkhan11/A_Square_construction_Website#readme",
+  "bugs": {
+    "url": "https://github.com/ayubkhan11/A_Square_construction_Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayubkhan11/A_Square_construction_Website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "css:purge": "purgecss --css assets/css/*.css --content *.html **/*.html **/*.js --output assets/css/",
+    "css:minify": "cleancss -o assets/css/style.min.css assets/css/style.css",
+    "purgecss": "purgecss --config ./purgecss.config.js",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "devDependencies": {
+    "purgecss": "^7.0.2"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.4",
+    "@langchain/groq": "^1.0.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "keywords": [
+    "construction",
+    "website",
+    "asquare",
+    "html",
+    "css",
+    "javascript"
+  ]
+}
