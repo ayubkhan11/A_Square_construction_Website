@@ -9524,3 +9524,11 @@ body {
     justify-content: space-between !important;
   }
 }
+
+a.category.d-block {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  margin: 5px;
+}
