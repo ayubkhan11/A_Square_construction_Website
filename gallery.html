@@ -26,10 +26,15 @@
      <!-- Header CSS (loads immediately) -->
     <link rel="stylesheet" href="/css/header.css">
     <!-- google fonts -->
-    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</noscript>
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="/css/style-liberty.css">
-    <script src="/js/chatbot-embed.js"></script>
+    <script src="/js/chatbot-embed.js" defer></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
