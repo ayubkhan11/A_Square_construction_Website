@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+vendor/
+*.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+dist/
+build/
+out/
+tmp/
+temp/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Miscellaneous
+*.bak
+*.tmp
