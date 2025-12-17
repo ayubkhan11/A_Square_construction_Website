@@ -1,15 +1,24 @@
+import express from "express";
 import { ChatGroq } from "@langchain/groq";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
+import dotenv from "dotenv";
 
+const router = express.Router();
+
+// Load environment variables
+dotenv.config();
+
+// Initialize Groq AI
 const llm = new ChatGroq({
   model: "llama-3.3-70b-versatile",
   temperature: 0.4,
   apiKey: process.env.GROQ_API_KEY,
 });
 
-// In-memory session storage (works fine on Vercel)
+// In-memory chat history
 const chatHistories = new Map();
 
+// Super professional system prompt for A Square Construction
 const systemPrompt = `You are a warm, professional and extremely helpful live assistant for A Square Construction & Interiors, Krishnagiri.
 
 Company: A Square Construction
@@ -23,62 +32,90 @@ Services: Residential Construction | Commercial Buildings | Industrial Projects 
 Completed: 20+ projects, 100+ happy clients
 
 Rules:
-- Always speak like a real customer care executive
-- Keep replies short (2–4 sentences)
-- For quote/site visit → ask name, phone & location
+- Always speak like a real customer care executive (friendly & confident)
+- Keep replies short and natural (2–4 sentences max)
+- For any quote/site visit request → reply: "Wonderful! Please share your name, phone number and project location — Mr. Zakir will personally call you within 1 hour for a free consultation & estimate."
 - Never make up prices or timelines
-- End most replies with a question
-- Everything handled by Mr. Zakir directly
+- End most replies with a question to continue the chat
+- No hr or marketing team. Everthing is handled by Mr. Zakir directly.
+- if ask for meeting or schedule a meeting then share zakir's contact details and office address"
 
-Contact:
+Contact Details (use exactly):
 Phone & WhatsApp: +91 97896 54321
 Email: asquareconstruction12@gmail.com
 Website: asquare-constructions.in
-`;
 
-async function processChat(message, sessionId) {
-  if (!chatHistories.has(sessionId)) {
-    chatHistories.set(sessionId, [new SystemMessage(systemPrompt)]);
-  }
+Reply in a natural, South Indian professional tone.`;
 
-  const history = chatHistories.get(sessionId);
-  history.push(new HumanMessage(message));
-
-  const response = await llm.invoke(history);
-  history.push(response);
-
-  if (history.length > 21) {
-    chatHistories.set(sessionId, [history[0], ...history.slice(-20)]);
-  }
-
-  return response.content;
-}
-
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
+const processChat = async (message, sessionId = "default") => {
   try {
-    const { message, sessionId = "default" } = req.body;
-
-    if (!message) {
-      return res.status(400).json({ error: "Message required" });
+    // Create new session with system prompt if doesn't exist
+    if (!chatHistories.has(sessionId)) {
+      chatHistories.set(sessionId, [new SystemMessage(systemPrompt)]);
     }
 
-    const reply = await processChat(message, sessionId);
+    const history = chatHistories.get(sessionId);
+    history.push(new HumanMessage(message));
 
-    res.status(200).json({
+    const response = await llm.invoke(history);
+    const aiReply = response.content;
+
+    history.push(response);
+
+    // Keep only last 20 messages + system prompt
+    if (history.length > 21) {
+      chatHistories.set(sessionId, [history[0], ...history.slice(-20)]);
+    }
+
+    return aiReply;
+  } catch (error) {
+    console.error("AI Error:", error.message);
+    return "Sorry, I'm having a technical issue right now. Please call us directly at +91 97896 54321 – we'll be happy to help!";
+  }
+};
+
+// Main chat endpoint
+router.post("/chat", async (req, res) => {
+  try {
+    console.log("📨 Received chat request:", req.body);
+    
+    const { message, sessionId } = req.body;
+
+    if (!message || typeof message !== "string" || !message.trim()) {
+      return res.status(400).json({ 
+        success: false, 
+        error: "Message required" 
+      });
+    }
+
+    console.log("🔍 Processing message:", message.trim());
+    
+    const reply = await processChat(message.trim(), sessionId || "default");
+    
+    console.log("✅ Response generated:", reply.substring(0, 50) + "...");
+
+    res.json({
       success: true,
       response: reply,
-      sessionId
+      sessionId: sessionId || "default"
     });
+    
   } catch (error) {
-    console.error("Chatbot error:", error);
+    console.error("❌ Error in /chat endpoint:", error);
+    console.error("Stack trace:", error.stack);
+    
     res.status(500).json({
       success: false,
-      response:
-        "Sorry, I'm having a technical issue right now. Please call +91 97896 54321."
+      error: "Internal server error",
+      message: error.message,
+      suggestion: "Please call +91 97896 54321 for immediate assistance"
     });
   }
-}
+});
+
+// Optional: health check
+router.get("/status", (req, res) => {
+  res.json({ status: "A Square Construction Chatbot → Online", sessions: chatHistories.size });
+});
+
+export default router;
