@@ -2,7 +2,7 @@
   "use strict";
 
   const CHATBOT_CONFIG = {
-    apiEndpoint: "/api/chatbot/chat",
+    apiEndpoint: "/api/chatbot",
     companyName: "A Square Construction",
     ownerName: "K.P. Zakir Hussain",
     welcomeMessage:
