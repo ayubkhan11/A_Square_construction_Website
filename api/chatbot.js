@@ -4,12 +4,9 @@ export const config = {
 
 import { ChatGroq } from "@langchain/groq";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const llm = new ChatGroq({
-  model: "llama-3.3-70b-versatile",
+  model: "llama-3.1-70b-versatile",
   temperature: 0.4,
   apiKey: process.env.GROQ_API_KEY,
 });
@@ -26,9 +23,9 @@ Services: Residential Construction | Commercial Buildings | Industrial Projects 
 Completed: 20+ projects, 100+ happy clients
 
 Rules:
-- Always speak like a real customer care executive
+- Speak like a real customer care executive
 - Keep replies 2–4 sentences
-- For site visit/quote → ask name, phone & location
+- For quote/site visit → ask name, phone, location
 - Never invent prices or timelines
 - End replies with a question
 - Everything handled directly by Mr. Zakir
@@ -46,7 +43,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log("GROQ KEY EXISTS:", !!process.env.GROQ_API_KEY);
+    if (!process.env.GROQ_API_KEY) {
+      throw new Error("Missing GROQ_API_KEY");
+    }
 
     const { message, sessionId = "default" } = req.body;
 
@@ -68,16 +67,16 @@ export default async function handler(req, res) {
       chatHistories.set(sessionId, [history[0], ...history.slice(-20)]);
     }
 
-    return res.json({
+    res.json({
       response: response.content,
       sessionId,
     });
 
   } catch (err) {
-    console.error("CHATBOT ERROR:", err);
-    return res.status(500).json({
+    console.error("CHATBOT ERROR:", err.message);
+    res.status(500).json({
       response:
-        "Sorry, we are facing a technical issue right now. Please call +91 97896 54321 for immediate assistance.",
+        "Sorry, we're facing a technical issue right now. Please call +91 97896 54321 for immediate assistance.",
     });
   }
 }
