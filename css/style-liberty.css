@@ -8222,16 +8222,16 @@ body {
 /* chatbot */
 #asquare-chatbot-widget {
     position: fixed !important;
-    right: 40px !important;
-    bottom: 40px !important;
+    right: 20px !important;
+    bottom: 20px !important;
     z-index: 999999 !important;
-    transform: scale(.9) !important;
+    transform: scale(.85) !important;
     transform-origin: bottom right !important
 }
 
 .asquare-chat-icon {
-    width: 56px !important;
-    height: 56px !important;
+    width: 52px !important;
+    height: 52px !important;
     background: #509FE4 !important;
     border-radius: 50% !important;
     display: flex;
@@ -8262,16 +8262,17 @@ body {
 }
 
 .asquare-chat-widget {
-    width: 342px !important;
-    max-width: calc(100vw - 30px) !important;
-    height: 522px !important;
+    width: 320px !important;
+    max-width: calc(100vw - 40px) !important;
+    height: 480px !important;
+    max-height: calc(100vh - 140px) !important; /* New: prevent overflow */
     background: white !important;
     border-radius: 23px !important;
     box-shadow: 0 25px 70px rgb(0 0 0 / .3) !important;
     display: none !important;
     flex-direction: column !important;
     position: fixed !important;
-    bottom: 95px !important;
+    bottom: 80px !important;
     right: 15px !important;
     border: 1px solid #eee !important;
     overflow: hidden !important;
@@ -9356,9 +9357,30 @@ body {
     }
 
     .asquare-chat-widget {
-        bottom: 95px !important;
-        width: calc(100vw - 30px) !important;
-        max-height: calc(100vh - 120px) !important;
-        border-radius: 20px !important;
+       width: calc(100vw - 20px) !important;         /* Full width minus margin */
+        height: calc(100vh - 200px) !important;       /* Use most of screen height */
+        max-height: calc(100vh - 100px) !important;   /* Critical: no overflow */
+        bottom: 56px !important; 
+        top: 120px !important;                     /* Space for icon */
+        left: 20px !important;                        /* Center properly */
+        right: 10px !important;
+        border-radius: 18px !important;
     }
+
+    .asquare-message-content {
+        max-width: 85% !important;
+        font-size: 13.5px !important;
+    }
+}
+/* Tablet adjustment */
+@media (max-width: 768px) and (min-width: 481px) {
+    .asquare-chat-widget {
+        width: 340px !important;
+        height: 520px !important;
+        max-height: calc(100vh - 120px) !important;
+    }
+}
+
+.asquare-chat-icon.hidden {
+    display: none !important;
 }
