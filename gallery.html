@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>A Square Construction – Residential & Commercial Projects</title>
-    <meta name="description" content="Explore A Square Construction’s completed projects — residential, commercial, and interior works. View our construction portfolio and real project images.">
+    <meta name="description" content="Explore A Square Construction's completed projects — residential, commercial, and interior works. View our construction portfolio and real project images.">
      <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -301,11 +301,6 @@
             document.getElementById("current-year").textContent =
               new Date().getFullYear();
           </script>
-
-          <script>
-            document.getElementById("current-year").textContent =
-              new Date().getFullYear();
-          </script>
         </div>
       </div>
 
@@ -321,211 +316,209 @@
       </button>
     </footer>
 
+    <!-- jQuery should load first, without defer -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
     <!-- Template JavaScript -->
-    <script src="js/jquery-3.3.1.min.js" defer></script>
-<script src="js/bootstrap.min.js" defer></script>
-    <!-- MENU-JS -->
     <script>
-        $(window).on("scroll", function() {
-            var scroll = $(window).scrollTop();
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // MENU-JS
+            $(window).on("scroll", function() {
+                var scroll = $(window).scrollTop();
 
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
+                if (scroll >= 80) {
+                    $("#site-header").addClass("nav-fixed");
+                } else {
+                    $("#site-header").removeClass("nav-fixed");
+                }
+            });
 
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function() {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function() {
+            // Main navigation Active Class Add Remove
+            $(".navbar-toggler").on("click", function() {
+                $("header").toggleClass("active");
+            });
+            
+            $(document).on("ready", function() {
                 if ($(window).width() > 991) {
                     $("header").removeClass("active");
                 }
+                $(window).on("resize", function() {
+                    if ($(window).width() > 991) {
+                        $("header").removeClass("active");
+                    }
+                });
+            });
+
+            // disable body scroll which navbar is in active
+            $(function() {
+                $('.navbar-toggler').click(function() {
+                    $('body').toggleClass('noscroll');
+                });
             });
         });
-
     </script>
-    <!-- //MENU-JS -->
 
-    <!-- disable body scroll which navbar is in active -->
+    <!-- Bootstrap can be deferred -->
+    <script src="/js/bootstrap.min.js" defer></script>
+
     <script>
-        $(function() {
-            $('.navbar-toggler').click(function() {
-                $('body').toggleClass('noscroll');
-            })
-        });
+        // Project Gallery Tab Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.project-tab');
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectsContainer = document.getElementById('projectsContainer');
+            const emptyState = document.getElementById('emptyState');
+            const projectCounter = document.getElementById('projectCounter');
+            const counterNumber = document.querySelector('.counter-number');
 
-    </script>
-    <!-- //disable body scroll which navbar is in active -->
-    <!-- //bootstrap -->
-    <script src="/js/bootstrap.min.js"></script>
-    <script>
-    // Project Gallery Tab Filtering
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.project-tab');
-        const projectCards = document.querySelectorAll('.project-card');
-        const projectsContainer = document.getElementById('projectsContainer');
-        const emptyState = document.getElementById('emptyState');
-        const projectCounter = document.getElementById('projectCounter');
-        const counterNumber = document.querySelector('.counter-number');
+            // Initialize counter
+            updateProjectCounter('all');
 
-        // Initialize counter
-        updateProjectCounter('all');
-
-        // Add click event to each tab
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove('active'));
-                
-                // Add active class to clicked tab
-                this.classList.add('active');
-                
-                // Get filter value
-                const filter = this.getAttribute('data-filter');
-                
-                // Filter projects
-                filterProjects(filter);
-                
-                // Update counter
-                updateProjectCounter(filter);
-            });
-        });
-
-        function filterProjects(filter) {
-            let visibleCount = 0;
-            let hasVisibleProjects = false;
-
-            // Show/hide projects based on filter
-            projectCards.forEach(card => {
-                const projectType = card.getAttribute('data-type');
-                
-                if (filter === 'all' || projectType === filter) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                    hasVisibleProjects = true;
-                } else {
-                    card.style.display = 'none';
-                }
+            // Add click event to each tab
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter projects
+                    filterProjects(filter);
+                    
+                    // Update counter
+                    updateProjectCounter(filter);
+                });
             });
 
-            // Show/hide empty state message
-            if (hasVisibleProjects) {
-                emptyState.style.display = 'none';
-                projectsContainer.style.display = 'grid';
-            } else {
-                emptyState.style.display = 'block';
-                projectsContainer.style.display = 'none';
-            }
+            function filterProjects(filter) {
+                let visibleCount = 0;
+                let hasVisibleProjects = false;
 
-            // Update counter text
-            counterNumber.textContent = visibleCount;
-        }
-
-        function updateProjectCounter(filter) {
-            let totalCount = 0;
-            
-            if (filter === 'all') {
-                totalCount = projectCards.length;
-            } else {
+                // Show/hide projects based on filter
                 projectCards.forEach(card => {
-                    if (card.getAttribute('data-type') === filter) {
-                        totalCount++;
+                    const projectType = card.getAttribute('data-type');
+                    
+                    if (filter === 'all' || projectType === filter) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                        hasVisibleProjects = true;
+                    } else {
+                        card.style.display = 'none';
                     }
                 });
-            }
-            
-            counterNumber.textContent = totalCount;
-        }
-    });
-</script>
-<!-- header page -->
-<script src="/js/load-header.js"></script>
 
-// Simple Lazy Loader for Background Images
-class SimpleLazyLoader {
-    constructor() {
-        this.observer = null;
-        this.init();
-    }
+                // Show/hide empty state message
+                if (hasVisibleProjects) {
+                    emptyState.style.display = 'none';
+                    projectsContainer.style.display = 'grid';
+                } else {
+                    emptyState.style.display = 'block';
+                    projectsContainer.style.display = 'none';
+                }
+
+                // Update counter text
+                counterNumber.textContent = visibleCount;
+            }
+
+            function updateProjectCounter(filter) {
+                let totalCount = 0;
+                
+                if (filter === 'all') {
+                    totalCount = projectCards.length;
+                } else {
+                    projectCards.forEach(card => {
+                        if (card.getAttribute('data-type') === filter) {
+                            totalCount++;
+                        }
+                    });
+                }
+                
+                counterNumber.textContent = totalCount;
+            }
+        });
+    </script>
     
-    init() {
-        // Check if IntersectionObserver is supported
-        if (!('IntersectionObserver' in window)) {
-            this.loadAllImages();
-            return;
-        }
-        
-        // Create intersection observer
-        this.observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.loadImage(entry.target);
-                        this.observer.unobserve(entry.target);
+    <!-- Simple Lazy Loader for Background Images -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            class SimpleLazyLoader {
+                constructor() {
+                    this.observer = null;
+                    this.init();
+                }
+                
+                init() {
+                    // Check if IntersectionObserver is supported
+                    if (!('IntersectionObserver' in window)) {
+                        this.loadAllImages();
+                        return;
                     }
-                });
-            },
-            {
-                rootMargin: '50px', // Start loading 50px before entering viewport
-                threshold: 0.1
+                    
+                    // Create intersection observer
+                    this.observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    this.loadImage(entry.target);
+                                    this.observer.unobserve(entry.target);
+                                }
+                            });
+                        },
+                        {
+                            rootMargin: '50px',
+                            threshold: 0.1
+                        }
+                    );
+                    
+                    // Start observing all lazy background elements
+                    document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
+                        this.observer.observe(el);
+                    });
+                }
+                
+                loadImage(element) {
+                    const imageUrl = element.getAttribute('data-bg');
+                    
+                    if (!imageUrl) return;
+                    
+                    const img = new Image();
+                    img.src = imageUrl;
+                    
+                    img.onload = () => {
+                        element.style.backgroundImage = `url('${imageUrl}')`;
+                        element.classList.add('loaded');
+                        element.removeAttribute('data-bg');
+                    };
+                    
+                    img.onerror = () => {
+                        console.warn('Failed to load image:', imageUrl);
+                    };
+                }
+                
+                loadAllImages() {
+                    document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
+                        const imageUrl = el.getAttribute('data-bg');
+                        if (imageUrl) {
+                            el.style.backgroundImage = `url('${imageUrl}')`;
+                            el.classList.add('loaded');
+                            el.removeAttribute('data-bg');
+                        }
+                    });
+                }
             }
-        );
-        
-        // Start observing all lazy background elements
-        document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
-            this.observer.observe(el);
-        });
-    }
-    
-    loadImage(element) {
-        const imageUrl = element.getAttribute('data-bg');
-        
-        if (!imageUrl) return;
-        
-        // Create new Image object to preload
-        const img = new Image();
-        img.src = imageUrl;
-        
-        img.onload = () => {
-            // Apply the background image
-            element.style.backgroundImage = `url('${imageUrl}')`;
-            element.classList.add('loaded');
             
-            // Remove data attribute to free memory
-            element.removeAttribute('data-bg');
-        };
-        
-        img.onerror = () => {
-            console.warn('Failed to load image:', imageUrl);
-            // Keep the placeholder visible
-        };
-    }
-    
-    loadAllImages() {
-        // Fallback for browsers without IntersectionObserver
-        document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
-            const imageUrl = el.getAttribute('data-bg');
-            if (imageUrl) {
-                el.style.backgroundImage = `url('${imageUrl}')`;
-                el.classList.add('loaded');
-                el.removeAttribute('data-bg');
-            }
+            // Initialize when DOM is ready
+            window.lazyLoader = new SimpleLazyLoader();
         });
-    }
-}
+    </script>
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    window.lazyLoader = new SimpleLazyLoader();
-});
+    <!-- header page -->
+    <script src="/js/load-header.js" defer></script>
 </body>
 
 </html>

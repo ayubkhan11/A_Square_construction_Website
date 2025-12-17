@@ -32,6 +32,7 @@
 
     <!-- Header CSS (loads immediately) -->
     <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="css/style-liberty.css">
 
     <!-- Favicon - Basic -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -139,7 +140,8 @@
 
       body {
         max-width: 100%;
-        overflow-y: hidden;
+overflow-x: hidden;     /* Keep horizontal control */
+    overflow-y: auto;       /* or visible – allows fixed elements */
         position: relative;
         margin: 0 !important;
         padding: 0 !important;
@@ -560,6 +562,8 @@
     </style>
   </head>
   <body>
+
+    <div class="site-wrapper">
     <!-- Skip to main content link -->
     <a href="#home" class="skip-to-content">Skip to main content</a>
 
@@ -809,7 +813,7 @@
                 class="img-fluid news-image"
               />
               <div class="image-card-text">
-                <h6><a href="#category" class="category d-block">Living</a></h6>
+                <h6><a href="#category" class="category">Living</a></h6>
                 <h4><a href="#">Meet the new creativity</a></h4>
               </div>
             </a>
@@ -837,7 +841,7 @@
               />
               <div class="image-card-text">
                 <h6>
-                  <a href="#category" class="category d-block">Designs</a>
+                  <a href="#category" class="category">Designs</a>
                 </h6>
                 <h4><a href="#">Interior that reflects you</a></h4>
               </div>
@@ -866,7 +870,7 @@
               />
               <div class="image-card-text">
                 <h6>
-                  <a href="#category" class="category d-block">Innovative</a>
+                  <a href="#category" class="category">Innovative</a>
                 </h6>
                 <h4><a href="#">Innovative stylish ideas</a></h4>
               </div>
@@ -1320,11 +1324,10 @@
             <div class="col-lg-5 align-self mt-lg-0 mt-sm-5 mt-4">
               <div class="w3l-buttons d-sm-flex justify-content-end">
                 <a
-                  href="contact.html"
-                  aria-label="Ger started with a consultation"
-                  class="btn btn-style transparant-btn ms-sm-2"
-                  >Get Started Now</a
-                >
+      href="tel:+91 9940792792"
+      aria-label="Call now for a consultation"
+      class="btn btn-style transparant-btn ms-sm-2"
+      >Call Now</a>
               </div>
             </div>
           </div>
@@ -1550,6 +1553,7 @@
               <div class="main-social-footer-29">
                 <a
                   href="https://www.facebook.com/profile.php?id=61581026489552"
+                  target="_blank"
                   class="me-3 text-decoration-none"
                   aria-label="Facebook"
                 >
@@ -1558,6 +1562,7 @@
                 <a
                   href="https://www.instagram.com/a_square__constructions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   class="text-decoration-none"
+                  target="_blank"
                   aria-label="Instagram"
                 >
                   <span class="fab fa-instagram text-white fs-5"></span>
@@ -1614,6 +1619,9 @@
         <span class="fa fa-angle-up"></span>
       </button>
     </footer>
+  </div>
+   
+  
 
     <!-- ====== SCRIPTS WITH DEFER ====== -->
     <script src="/js/jquery-3.3.1.min.js" defer></script>

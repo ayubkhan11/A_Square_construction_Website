@@ -3631,7 +3631,7 @@ p.white {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    text-align: center !important;
+    text-align: left !important;
     width: 100% !important;
     margin-left: 0 !important;
     padding-left: 0 !important;
@@ -4177,7 +4177,7 @@ a.dropdown-item.active {
 }
 
 .banner-subtitle {
-    color: #509FE4 !important
+    color: #FFFFFF !important
 }
 
 .w3l-main-slider .banner-slider {
@@ -7333,13 +7333,21 @@ div,
     border-radius: 15px;
     border-left: 4px solid #509FE4;
     transition: all 0.3s ease;
-    position: relative
+    position: relative;
+    text-align: center; /* Simply center text alignment */
+}
+
+.service-item::after {
+    content: '';
+    display: block;
+    height: 1.6rem;  /* Adjust as needed */
+    margin-top: auto;  /* Only works with flex anyway */
 }
 
 .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgb(238 157 30 / .15);
-    background: #fff
+    box-shadow: 0 10px 25px rgba(238, 157, 30, 0.15);
+    background: #fff;
 }
 
 .service-badge {
@@ -7355,105 +7363,142 @@ div,
     align-items: center;
     justify-content: center;
     font-size: .8rem;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .service-item h5 {
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: .8rem
+    margin-bottom: .8rem;
 }
 
 .service-item p {
     color: #666;
     line-height: 1.5;
-    margin: 0
+    margin: 0;
+}/* ===== SERVICE ITEMS - ADD THIS AT THE TOP ===== */
+.service-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid #509FE4;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center !important; /* Add this for center alignment */
 }
 
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(238, 157, 30, 0.15);
+    background: #fff;
+}
+
+.service-badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #509FE4;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.service-item h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem; /* Increased for better spacing */
+}
+
+.service-item p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px)
+        transform: translateY(10px);
     }
-
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0);
     }
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media (max-width:768px) {
     .switch-buttons {
         flex-direction: column;
-        align-items: center
+        align-items: center;
     }
 
     .switch-btn {
         width: 100%;
         max-width: 300px;
-        justify-content: center
+        justify-content: center;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
-        margin: 1.5rem 0
+        margin: 1.5rem 0;
     }
 
     .category-content {
-        padding: 2rem 0
+        padding: 2rem 0;
     }
 
     .service-item {
-        padding: 1.5rem
+        padding: 1.5rem;
+        text-align: center !important; /* Ensure center alignment on mobile */
     }
 }
 
 @media (max-width:480px) {
     .switch-btn {
         padding: 1rem 2rem;
-        font-size: 1rem
+        font-size: 1rem;
     }
 
     .category-content {
-        padding: 1.5rem 0
+        padding: 1.5rem 0;
     }
 
     .services-grid {
-        margin: 1rem 0
+        margin: 1rem 0;
     }
 
     .service-item {
-        padding: 1.2rem
+        padding: 1.2rem;
+        text-align: center !important; /* Ensure center alignment on small mobile */
     }
 }
-
-.project-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgb(0 0 0 / .08);
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgb(0 0 0 / .12)
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
 #movetop {
     position: fixed;
     bottom: 20px;
@@ -7737,20 +7782,23 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    padding: 8px 18px;
+    padding: 0 18px; /* Remove vertical padding */
+    height: 30px; /* Fixed height */
     background-color: #509FE4;
     color: #fff;
     border-radius: 20px;
     font-size: .85rem;
     font-weight: 600;
     letter-spacing: .5px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .category-indicator.real-estate {
-    background-color: rgb(34 34 34 / .95)
+    background-color: rgb(34 34 34 / .95);
 }
-
 .project-counter {
     text-align: center;
     margin-top: 40px;
@@ -8005,7 +8053,7 @@ body {
 .banner-info h5 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #509FE4;
+    color: #FFFFFF;
     font-weight: 600
 }
 
@@ -8171,6 +8219,7 @@ body {
     text-align: center !important
 }
 
+/* chatbot */
 #asquare-chatbot-widget {
     position: fixed !important;
     right: 40px !important;
@@ -8185,7 +8234,7 @@ body {
     height: 56px !important;
     background: #509FE4 !important;
     border-radius: 50% !important;
-    display: flex !important;
+    display: flex;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
@@ -8234,7 +8283,7 @@ body {
 }
 
 .asquare-chat-header {
-    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
+    background: #509FE4 !important;
     color: white !important;
     padding: 18px 22px !important;
     border-radius: 23px 23px 0 0 !important;
@@ -8388,7 +8437,7 @@ body {
     right: 9px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
+    background: #509FE4 !important;
     border: none !important;
     width: 41px !important;
     height: 41px !important;
@@ -9077,11 +9126,13 @@ body {
     opacity: 1
 }
 
-.w3_agile_portfolio_grid a {
-    display: block;
-    width: 100%;
-    height: 100%
-}
+    .w3_agile_portfolio_grid a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1
+    }
 
 .w3_agile_portfolio_grid img {
     width: 100%;
@@ -9278,4 +9329,36 @@ a.category.d-block {
 @keyframes fadeIn {
     from { opacity: 0.8; }
     to { opacity: 1; }
+}
+
+.site-wrapper {
+    overflow: hidden;        /* Now safe here – clips content, not fixed widgets */
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    overflow-x: hidden;      /* Only this – no y hidden */
+    overflow-y: visible;     /* Critical for fixed elements */
+}
+@media (max-width: 480px) {
+    #asquare-chatbot-widget {
+        right: 15px !important;
+        bottom: 20px !important;
+        transform: none !important;
+    }
+
+    .asquare-chat-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 23px !important;
+        box-shadow: 0 8px 30px rgba(80, 159, 228, 0.6) !important;  /* nicer shadow */
+    }
+
+    .asquare-chat-widget {
+        bottom: 95px !important;
+        width: calc(100vw - 30px) !important;
+        max-height: calc(100vh - 120px) !important;
+        border-radius: 20px !important;
+    }
 }
