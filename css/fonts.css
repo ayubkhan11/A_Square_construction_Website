@@ -1,0 +1,55 @@
+/* fonts.css - CORRECTED VERSION */
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+/* Font Awesome classes - Version 5 compatible */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+}
+
+/* Common icons - adjust based on what you use */
+.fa-bars:before { content: "\f0c9"; }
+.fa-times:before { content: "\f00d"; }
+.fa-search:before { content: "\f002"; }
+.fa-phone:before { content: "\f095"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-map-marker-alt:before { content: "\f3c5"; }
+.fa-facebook-f:before { content: "\f39e"; }
+.fa-twitter:before { content: "\f099"; }
+.fa-linkedin-in:before { content: "\f0e1"; }
+.fa-instagram:before { content: "\f16d"; }

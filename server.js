@@ -104,7 +104,6 @@ app.get("/api/test", (req, res) => {
 
 // 404 Handler
 app.use((req, res) => {
-  console.log(`404: ${req.method} ${req.url}`);
   res.status(404).send(`
     <h1>404 - Page Not Found</h1>
     <p>Try these links:</p>

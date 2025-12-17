@@ -6,7 +6,7 @@
     --bs-purple: #6f42c1 --bs-pink: #d63384;
     --bs-red: #dc3545;
     --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
+    --bs-yellow: #509FE4;
     --bs-green: #198754;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
@@ -17,7 +17,7 @@
     --bs-secondary: #6c757d;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
+    --bs-warning: #509FE4;
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
@@ -143,7 +143,7 @@ h5 {
 .h6,
 h6 {
     font-size: 1rem;
-    color: #EE9D1E
+    color: #509FE4
 }
 
 p {
@@ -970,7 +970,7 @@ textarea.form-control {
     color: #2c3e50;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #ee9d1e;
+    border-bottom: 2px solid #509FE4;
     display: inline-block
 }
 
@@ -998,7 +998,7 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    color: #ee9d1e;
+    color: #509FE4;
     font-size: 20px
 }
 
@@ -1024,7 +1024,7 @@ textarea.form-control {
     color: #2c3e50;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #ee9d1e;
+    border-bottom: 2px solid #509FE4;
     display: inline-block
 }
 
@@ -1058,7 +1058,7 @@ label {
 }
 
 .required {
-    color: #ee9d1e
+    color: #509FE4
 }
 
 input,
@@ -1076,7 +1076,7 @@ input:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    border-color: #ee9d1e;
+    border-color: #509FE4;
     box-shadow: 0 0 0 2px rgb(238 157 30 / .1)
 }
 
@@ -1086,7 +1086,7 @@ textarea {
 }
 
 .submit-btn {
-    background-color: #ee9d1e;
+    background-color: #509FE4;
     color: #fff;
     border: none;
     padding: 16px 30px;
@@ -1444,8 +1444,8 @@ fieldset:disabled .btn {
 
 .btn-warning {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107
+    background-color: #509FE4;
+    border-color: #509FE4
 }
 
 .btn-warning:hover {
@@ -1478,8 +1478,8 @@ fieldset:disabled .btn {
 .btn-warning.disabled,
 .btn-warning:disabled {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107
+    background-color: #509FE4;
+    border-color: #509FE4
 }
 
 .btn-danger {
@@ -3031,7 +3031,7 @@ fieldset:disabled .btn {
 }
 
 .bg-warning {
-    background-color: #ffc107 !important
+    background-color: #509FE4 !important
 }
 
 .bg-danger {
@@ -3440,8 +3440,8 @@ fieldset:disabled .btn {
 }
 
 :root {
-    --primary-color: #ff9e00;
-    --secondary-color: #ff8500;
+    --primary-color: #509FE4;
+    --secondary-color: #509FE4;
     --font-color: #58595b;
     --bg-color: #fff;
     --heading-color: #060500;
@@ -3637,7 +3637,7 @@ p.white {
     padding-left: 0 !important;
     display: inline-block;
     line-height: 22px;
-    color: #EE9D1E;
+    color: #509FE4;
     position: relative
 }
 
@@ -3652,7 +3652,7 @@ p.white {
     margin-left: 0;
     left: 0;
     top: 12px;
-    color: #EE9D1E
+    color: #509FE4
 }
 
 a.read {
@@ -4177,7 +4177,7 @@ a.dropdown-item.active {
 }
 
 .banner-subtitle {
-    color: #EE9D1E !important
+    color: #509FE4 !important
 }
 
 .w3l-main-slider .banner-slider {
@@ -4785,7 +4785,7 @@ a.btn.btn-style.btn-banner:hover {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ee9d1e;
+    color: #509FE4;
     text-decoration: underline;
     margin-bottom: 15px;
     font-weight: 600;
@@ -4805,11 +4805,11 @@ a.btn.btn-style.btn-banner:hover {
 }
 
 .image-card h4 a:hover {
-    color: #ee9d1e
+    color: #509FE4
 }
 
 .image-card .category:hover {
-    color: #ee9d1e;
+    color: #509FE4;
     text-decoration: underline
 }
 
@@ -5442,7 +5442,7 @@ img.mfp-img {
 }
 
 .w3l-content-8 li.icon-list-item-gd i {
-    color: var(--primary-color);
+    color: #509FE4;
     font-size: 24px;
     margin-top: 7px
 }
@@ -5478,7 +5478,7 @@ img.mfp-img {
     line-height: 26px;
     margin-bottom: 15px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #509FE4;
     display: inline-block;
     text-transform: capitalize
 }
@@ -6912,7 +6912,7 @@ div,
     left: 50%;
     width: 0;
     height: 6px;
-    background: linear-gradient(90deg, #EE9D1E, #ffb84d);
+    background: linear-gradient(90deg, #509FE4, #ffb84d);
     transition: all 0.7s cubic-bezier(.4, 0, .2, 1);
     transform: translateX(-50%)
 }
@@ -6926,13 +6926,13 @@ div,
 .feature-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 30px 70px rgb(238 157 30 / .22);
-    border-color: #EE9D1E
+    border-color: #509FE4
 }
 
 .icon-wrapper {
     width: 92px;
     height: 92px;
-    background: linear-gradient(135deg, #EE9D1E, #ffb84d);
+    background: #509FE4;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -6989,7 +6989,7 @@ div,
     transform: translateX(-50%);
     width: 90px;
     height: 4px;
-    background: #EE9D1E;
+    background: #509FE4;
     border-radius: 2px
 }
 
@@ -7016,13 +7016,13 @@ div,
     font-weight: 700;
     font-size: 17px;
     letter-spacing: 1.2px;
-    border: 2.5px solid #EE9D1E;
+    border: 2.5px solid #509FE4;
     box-shadow: 0 10px 30px rgb(238 157 30 / .18);
     transition: all 0.4s ease
 }
 
 .material-badge:hover {
-    background: #EE9D1E;
+    background: #509FE4;
     color: #fff;
     transform: translateY(-6px);
     box-shadow: 0 15px 40px rgb(238 157 30 / .3)
@@ -7056,7 +7056,7 @@ div,
 }
 
 .luxury-cta span {
-    color: #EE9D1E;
+    color: #509FE4;
     font-size: 48px;
     font-weight: 800
 }
@@ -7219,7 +7219,7 @@ div,
 }
 
 .step-number {
-    background-color: #EE9D1E !important;
+    background-color: #509FE4 !important;
     border: none !important;
     transition: all 0.3s ease !important
 }
@@ -7230,7 +7230,7 @@ div,
 }
 
 .badge {
-    background-color: #EE9D1E !important;
+    background-color: #509FE4 !important;
     border: none !important;
     transition: all 0.3s ease !important
 }
@@ -7241,7 +7241,7 @@ div,
 }
 
 .border-primary {
-    border-color: #EE9D1E !important
+    border-color: #509FE4 !important
 }
 
 .step-number:focus,
@@ -7280,9 +7280,9 @@ div,
 
 .switch-btn {
     padding: 1.2rem 2.5rem;
-    border: 2px solid #EE9D1E;
+    border: 2px solid #509FE4;
     background: #fff;
-    color: #EE9D1E;
+    color: #509FE4;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -7299,7 +7299,7 @@ div,
 }
 
 .switch-btn.active {
-    background: #EE9D1E;
+    background: #509FE4;
     color: #fff;
     box-shadow: 0 5px 15px rgb(238 157 30 / .3)
 }
@@ -7331,7 +7331,7 @@ div,
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #EE9D1E;
+    border-left: 4px solid #509FE4;
     transition: all 0.3s ease;
     position: relative
 }
@@ -7346,7 +7346,7 @@ div,
     position: absolute;
     top: -10px;
     left: -10px;
-    background: #EE9D1E;
+    background: #509FE4;
     color: #fff;
     width: 30px;
     height: 30px;
@@ -7478,7 +7478,7 @@ div,
 }
 
 .w3yellow {
-    color: #ee9d1e !important
+    color: #509FE4 !important
 }
 
 .footer-title-29 {
@@ -7577,7 +7577,7 @@ body {
 }
 
 .counter-number {
-    color: #ee9d1e;
+    color: #509FE4;
     font-weight: 700;
     font-size: 1.2rem
 }
@@ -7654,7 +7654,7 @@ body {
     position: absolute;
     width: 80px;
     height: 4px;
-    background-color: #ee9d1e;
+    background-color: #509FE4;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -7693,14 +7693,14 @@ body {
 }
 
 .project-tab:hover {
-    border-color: #ee9d1e;
+    border-color: #509FE4;
     color: #222
 }
 
 .project-tab.active {
-    background-color: #ee9d1e;
+    background-color: #509FE4;
     color: #fff;
-    border-color: #ee9d1e;
+    border-color: #509FE4;
     box-shadow: 0 4px 12px rgb(238 157 30 / .2)
 }
 
@@ -7738,7 +7738,7 @@ body {
     bottom: 20px;
     right: 20px;
     padding: 8px 18px;
-    background-color: rgb(238 157 30 / .95);
+    background-color: #509FE4;
     color: #fff;
     border-radius: 20px;
     font-size: .85rem;
@@ -7759,7 +7759,7 @@ body {
 }
 
 .counter-number {
-    color: #ee9d1e;
+    color: #509FE4;
     font-weight: 700;
     font-size: 1.2rem
 }
@@ -7963,7 +7963,7 @@ body {
 }
 
 .w3yellow {
-    color: #ffc107
+    color: #509FE4
 }
 
 .w3l-main-slider {
@@ -8005,7 +8005,7 @@ body {
 .banner-info h5 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #ffc107;
+    color: #509FE4;
     font-weight: 600
 }
 
@@ -8019,7 +8019,7 @@ body {
 .btn-style {
     display: inline-block;
     padding: 12px 30px;
-    background: #ffc107;
+    background: #509FE4;
     color: #333;
     text-decoration: none;
     border-radius: 30px;
@@ -8106,7 +8106,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ffc107 !important;
+    color: #509FE4 !important;
     padding-bottom: 5px;
     font-weight: 700
 }
@@ -8183,7 +8183,7 @@ body {
 .asquare-chat-icon {
     width: 56px !important;
     height: 56px !important;
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: #509FE4 !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -8234,7 +8234,7 @@ body {
 }
 
 .asquare-chat-header {
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     color: white !important;
     padding: 18px 22px !important;
     border-radius: 23px 23px 0 0 !important;
@@ -8313,7 +8313,7 @@ body {
 }
 
 .asquare-message.user .asquare-message-content {
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     color: white !important;
     border-radius: 20px 20px 4px 20px !important;
     text-align: left !important;
@@ -8345,8 +8345,8 @@ body {
 
 .asquare-quick-btn {
     background: white !important;
-    border: 1.8px solid #EE9D1E !important;
-    color: #EE9D1E !important;
+    border: 1.8px solid #509FE4 !important;
+    color: #509FE4 !important;
     padding: 9px 16px !important;
     border-radius: 27px !important;
     cursor: pointer !important;
@@ -8388,7 +8388,7 @@ body {
     right: 9px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     border: none !important;
     width: 41px !important;
     height: 41px !important;
@@ -8758,7 +8758,7 @@ body {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: #ee9d1e;
+    background: #509FE4;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -8834,7 +8834,7 @@ body {
 }
 
 .submit-btn {
-    background: #ee9d1e;
+    background: #509FE4;
     color: #fff;
     border: none;
     padding: 1rem 2rem;
@@ -8851,7 +8851,7 @@ body {
 }
 
 .submit-btn:hover {
-    background: #ee9d1e
+    background: #509FE4
 }
 
 .whatsapp-notice {
@@ -9006,7 +9006,7 @@ body {
 .gallery-title {
     font-size: 14px;
     font-weight: 600;
-    color: #ee9d1e;
+    color: #509FE4;
     text-align: center;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -9016,7 +9016,7 @@ body {
 .gallery-subtitle {
     font-size: 48px;
     font-weight: 700;
-    color: #ee9d1e;
+    color: #509FE4;
     text-align: center;
     margin-bottom: 80px;
     background: #000;
@@ -9198,4 +9198,84 @@ a.category.d-block {
     min-height: 44px;
     padding: 10px;
     margin: 5px
+}
+/* fonts.css - Improved Version */
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/webfonts/fa-brands-400.woff2') format('woff2');
+  ascent-override: 92%;
+  descent-override: 8%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Solid';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/webfonts/fa-solid-900.woff2') format('woff2');
+  ascent-override: 95%;
+  descent-override: 5%;
+  line-gap-override: 0%;
+}
+/* Verify your icon classes use the right font-family */
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands'; /* Must match @font-face */
+}
+
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Solid'; /* Must match @font-face */
+}
+/* CSS for Lazy Loading Background Images */
+.lazy-bg {
+    /* Background styling - keep your existing styles */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5; /* Light gray placeholder */
+    min-height: 250px; /* Ensure consistent height */
+    
+    /* Loading animation */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Loading animation for placeholder */
+.lazy-bg:not(.loaded)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* When image loads */
+.lazy-bg.loaded {
+    background-color: transparent; /* Remove placeholder */
+    animation: fadeIn 0.5s ease-out;
+}
+
+.lazy-bg.loaded::before {
+    display: none; /* Remove loading animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
 }

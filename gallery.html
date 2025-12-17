@@ -77,48 +77,67 @@
                     <button class="project-tab" data-filter="real-estate">Real Estate</button>
                 </div>
                 
-                <div class="projects-grid" id="projectsContainer">
-                    <!-- Construction Projects -->
-                    
-                    <div class="project-card" data-type="real-estate">
-                        <div class="project-image" style="background-image: url('images/land-1.avif')"></div>
-                        <div class="category-indicator real-estate">Real Estate</div>
-                    </div>
-                    
-                    <div class="project-card" data-type="construction">
-                        <div class="project-image" style="background-image: url('images/construction-1.avif')"></div>
-                        <div class="category-indicator">Construction</div>
-                    </div>
-                    
-                    <div class="project-card" data-type="construction">
-                        <div class="project-image" style="background-image: url('images/construction-2.avif')"></div>
-                        <div class="category-indicator">Construction</div>
-                    </div>
-                    
-                    <div class="project-card" data-type="construction">
-                        <div class="project-image" style="background-image: url('images/construction-3.avif')"></div>
-                        <div class="category-indicator">Construction</div>
-                    </div>
-                    
-                    <div class="project-card" data-type="real-estate">
-                        <div class="project-image" style="background-image: url('images/construction-4.avif')"></div>
-                        <div class="category-indicator real-estate">Real Estate</div>
-                    </div>
-                    
-                    <div class="project-card" data-type="real-estate">
-                        <div class="project-image" style="background-image: url('images/land-2.avif')"></div>
-                        <div class="category-indicator real-estate">Real Estate</div>
-                    </div>
-                    
-                <div class="empty-state" id="emptyState">
-                    <h4>No Projects Found</h4>
-                    <p>There are no projects in this category at the moment.</p>
-                </div>
-                
-                <div class="project-counter" id="projectCounter">
-                    Showing <span class="counter-number">12</span> projects
-                </div>
-            </div>
+               <div class="projects-grid" id="projectsContainer">
+    <!-- Construction Projects -->
+    
+    <div class="project-card" data-type="real-estate">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/land-1.avif"
+        ></div>
+        <div class="category-indicator real-estate">Real Estate</div>
+    </div>
+    
+    <div class="project-card" data-type="construction">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/construction-1.avif"
+        ></div>
+        <div class="category-indicator">Construction</div>
+    </div>
+    
+    <div class="project-card" data-type="construction">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/construction-2.avif"
+        ></div>
+        <div class="category-indicator">Construction</div>
+    </div>
+    
+    <div class="project-card" data-type="construction">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/construction-3.avif"
+        ></div>
+        <div class="category-indicator">Construction</div>
+    </div>
+    
+    <div class="project-card" data-type="real-estate">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/construction-4.avif"
+        ></div>
+        <div class="category-indicator real-estate">Real Estate</div>
+    </div>
+    
+    <div class="project-card" data-type="real-estate">
+        <div 
+            class="project-image lazy-bg"
+            data-bg="images/land-2.avif"
+        ></div>
+        <div class="category-indicator real-estate">Real Estate</div>
+    </div>
+    
+    <div class="empty-state" id="emptyState">
+        <h4>No Projects Found</h4>
+        <p>There are no projects in this category at the moment.</p>
+    </div>
+    
+    <div class="project-counter" id="projectCounter">
+        Showing <span class="counter-number">12</span> projects
+    </div>
+</div>
+
         </div>
     </main>
     
@@ -429,6 +448,84 @@
 </script>
 <!-- header page -->
 <script src="/js/load-header.js"></script>
+
+// Simple Lazy Loader for Background Images
+class SimpleLazyLoader {
+    constructor() {
+        this.observer = null;
+        this.init();
+    }
+    
+    init() {
+        // Check if IntersectionObserver is supported
+        if (!('IntersectionObserver' in window)) {
+            this.loadAllImages();
+            return;
+        }
+        
+        // Create intersection observer
+        this.observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.loadImage(entry.target);
+                        this.observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                rootMargin: '50px', // Start loading 50px before entering viewport
+                threshold: 0.1
+            }
+        );
+        
+        // Start observing all lazy background elements
+        document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
+            this.observer.observe(el);
+        });
+    }
+    
+    loadImage(element) {
+        const imageUrl = element.getAttribute('data-bg');
+        
+        if (!imageUrl) return;
+        
+        // Create new Image object to preload
+        const img = new Image();
+        img.src = imageUrl;
+        
+        img.onload = () => {
+            // Apply the background image
+            element.style.backgroundImage = `url('${imageUrl}')`;
+            element.classList.add('loaded');
+            
+            // Remove data attribute to free memory
+            element.removeAttribute('data-bg');
+        };
+        
+        img.onerror = () => {
+            console.warn('Failed to load image:', imageUrl);
+            // Keep the placeholder visible
+        };
+    }
+    
+    loadAllImages() {
+        // Fallback for browsers without IntersectionObserver
+        document.querySelectorAll('.lazy-bg[data-bg]').forEach(el => {
+            const imageUrl = el.getAttribute('data-bg');
+            if (imageUrl) {
+                el.style.backgroundImage = `url('${imageUrl}')`;
+                el.classList.add('loaded');
+                el.removeAttribute('data-bg');
+            }
+        });
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    window.lazyLoader = new SimpleLazyLoader();
+});
 </body>
 
 </html>

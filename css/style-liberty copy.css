@@ -6,7 +6,7 @@
     --bs-purple: #6f42c1 --bs-pink: #d63384;
     --bs-red: #dc3545;
     --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
+    --bs-yellow: #509FE4;
     --bs-green: #198754;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
@@ -17,7 +17,7 @@
     --bs-secondary: #6c757d;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
+    --bs-warning: #509FE4;
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
@@ -143,7 +143,7 @@ h5 {
 .h6,
 h6 {
     font-size: 1rem;
-    color: #EE9D1E;
+    color: #509FE4;
 }
 
 p {
@@ -986,7 +986,7 @@ textarea.form-control {
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #ee9d1e;
+            border-bottom: 2px solid #509FE4;
             display: inline-block;
         }
 
@@ -1014,7 +1014,7 @@ textarea.form-control {
             align-items: center;
             justify-content: center;
             margin-right: 15px;
-            color: #ee9d1e;
+            color: #509FE4;
             font-size: 20px;
         }
 
@@ -1041,7 +1041,7 @@ textarea.form-control {
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #ee9d1e;
+            border-bottom: 2px solid #509FE4;
             display: inline-block;
         }
 
@@ -1075,7 +1075,7 @@ textarea.form-control {
         }
 
         .required {
-            color: #ee9d1e;
+            color: #509FE4;
         }
 
         input, textarea, select {
@@ -1089,7 +1089,7 @@ textarea.form-control {
 
         input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: #ee9d1e;
+            border-color: #509FE4;
             box-shadow: 0 0 0 2px rgba(238, 157, 30, 0.1);
         }
 
@@ -1099,7 +1099,7 @@ textarea.form-control {
         }
 
         .submit-btn {
-            background-color: #ee9d1e;
+            background-color: #509FE4;
             color: white;
             border: none;
             padding: 16px 30px;
@@ -1472,8 +1472,8 @@ fieldset:disabled .btn {
 
 .btn-warning {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107
+    background-color: #509FE4;
+    border-color: #509FE4
 }
 
 .btn-warning:hover {
@@ -1509,8 +1509,8 @@ fieldset:disabled .btn {
 .btn-warning.disabled,
 .btn-warning:disabled {
     color: #000;
-    background-color: #ffc107;
-    border-color: #ffc107
+    background-color: #509FE4;
+    border-color: #509FE4
 }
 
 .btn-danger {
@@ -3073,7 +3073,7 @@ fieldset:disabled .btn {
 }
 
 .bg-warning {
-    background-color: #ffc107 !important
+    background-color: #509FE4 !important
 }
 
 .bg-danger {
@@ -3693,7 +3693,7 @@ p.white {
     padding-left: 0 !important;
     display: inline-block;
     line-height: 22px;
-    color: #EE9D1E;
+    color: #509FE4;
     position: relative;
 }
 
@@ -3708,7 +3708,7 @@ p.white {
     margin-left: 0;
     left: 0;
     top: 12px;
-     color: #EE9D1E;
+     color: #509FE4;
 }
 
 a.read {
@@ -4257,7 +4257,7 @@ a.dropdown-item.active {
 }
 
 .banner-subtitle {
-  color: #EE9D1E !important;
+  color: #509FE4 !important;
 }
 
 .w3l-main-slider .banner-slider {
@@ -4875,7 +4875,7 @@ a.btn.btn-style.btn-banner:hover {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ee9d1e;
+            color: #509FE4;
             text-decoration: underline;
             margin-bottom: 15px;
             font-weight: 600;
@@ -4895,11 +4895,11 @@ a.btn.btn-style.btn-banner:hover {
         }
         
         .image-card h4 a:hover {
-            color: #ee9d1e;
+            color: #509FE4;
         }
         
         .image-card .category:hover {
-            color: #ee9d1e;
+            color: #509FE4;
             text-decoration: underline;
         }
         
@@ -7161,7 +7161,7 @@ div,
   position: absolute;
   top: 0; left: 50%;
   width: 0; height: 6px;
-  background: linear-gradient(90deg, #EE9D1E, #ffb84d);
+  background: linear-gradient(90deg, #509FE4, #ffb84d);
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
 }
@@ -7169,14 +7169,14 @@ div,
 .feature-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 30px 70px rgba(238,157,30,0.22);
-  border-color: #EE9D1E;
+  border-color: #509FE4;
 }
 
 /* Icon – exact spacing like your perfect card */
 .icon-wrapper {
   width: 92px;
   height: 92px;
-  background: linear-gradient(135deg, #EE9D1E, #ffb84d);
+  background: linear-gradient(135deg, #509FE4, #ffb84d);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -7234,7 +7234,7 @@ div,
   transform: translateX(-50%);
   width: 90px;
   height: 4px;
-  background: #EE9D1E;
+  background: #509FE4;
   border-radius: 2px;
 }
 
@@ -7263,14 +7263,14 @@ div,
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 1.2px;
-  border: 2.5px solid #EE9D1E;
+  border: 2.5px solid #509FE4;
   box-shadow: 0 10px 30px rgba(238,157,30,0.18);
   transition: all 0.4s ease;
 }
 
 
 .material-badge:hover {
-  background: #EE9D1E;
+  background: #509FE4;
   color: #ffffff;
   transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(238,157,30,0.3);
@@ -7299,7 +7299,7 @@ div,
 }
 
 .luxury-cta span {
-  color: #EE9D1E;
+  color: #509FE4;
   font-size: 48px;
   font-weight: 800;
 }   
@@ -7462,7 +7462,7 @@ div,
 }
  /* Orange Color Theme */
         .step-number {
-            background-color: #EE9D1E !important;
+            background-color: #509FE4 !important;
             border: none !important;
             transition: all 0.3s ease !important;
         }
@@ -7473,7 +7473,7 @@ div,
         }
         
         .badge {
-            background-color: #EE9D1E !important;
+            background-color: #509FE4 !important;
             border: none !important;
             transition: all 0.3s ease !important;
         }
@@ -7484,7 +7484,7 @@ div,
         }
         
         .border-primary {
-            border-color: #EE9D1E !important;
+            border-color: #509FE4 !important;
         }
         
         /* Remove any blue hover effects */
@@ -7525,9 +7525,9 @@ div,
 
 .switch-btn {
     padding: 1.2rem 2.5rem;
-    border: 2px solid #EE9D1E;
+    border: 2px solid #509FE4;
     background: white;
-    color: #EE9D1E;
+    color: #509FE4;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -7544,7 +7544,7 @@ div,
 }
 
 .switch-btn.active {
-    background: #EE9D1E;
+    background: #509FE4;
     color: white;
     box-shadow: 0 5px 15px rgba(238, 157, 30, 0.3);
 }
@@ -7576,7 +7576,7 @@ div,
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #EE9D1E;
+    border-left: 4px solid #509FE4;
     transition: all 0.3s ease;
     position: relative;
 }
@@ -7591,7 +7591,7 @@ div,
     position: absolute;
     top: -10px;
     left: -10px;
-    background: #EE9D1E;
+    background: #509FE4;
     color: white;
     width: 30px;
     height: 30px;
@@ -7728,7 +7728,7 @@ div,
 
 /* Footer Customization */
 .w3yellow {
-    color: #ee9d1e !important;
+    color: #509FE4 !important;
 }
 
 .footer-title-29 {
@@ -7836,7 +7836,7 @@ body {
 }
 
 .counter-number {
-    color: #ee9d1e;
+    color: #509FE4;
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -7915,7 +7915,7 @@ body {
             position: absolute;
             width: 80px;
             height: 4px;
-            background-color: #ee9d1e;
+            background-color: #509FE4;
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -7955,14 +7955,14 @@ body {
         }
         
         .project-tab:hover {
-            border-color: #ee9d1e;
+            border-color: #509FE4;
             color: #222;
         }
         
         .project-tab.active {
-            background-color: #ee9d1e;
+            background-color: #509FE4;
             color: white;
-            border-color: #ee9d1e;
+            border-color: #509FE4;
             box-shadow: 0 4px 12px rgba(238, 157, 30, 0.2);
         }
         
@@ -8024,7 +8024,7 @@ body {
         }
         
         .counter-number {
-            color: #ee9d1e;
+            color: #509FE4;
             font-weight: 700;
             font-size: 1.2rem;
         }
@@ -8235,7 +8235,7 @@ body {
         }
         
         .w3yellow {
-            color: #ffc107;
+            color: #509FE4;
         }
         
         /* Hero/Banner Critical Styles */
@@ -8279,7 +8279,7 @@ body {
         .banner-info h5 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: #ffc107;
+            color: #509FE4;
             font-weight: 600;
         }
         
@@ -8293,7 +8293,7 @@ body {
         .btn-style {
             display: inline-block;
             padding: 12px 30px;
-            background: #ffc107;
+            background: #509FE4;
             color: #333;
             text-decoration: none;
             border-radius: 30px;
@@ -8380,7 +8380,7 @@ body {
         
         .nav-link:hover,
         .nav-link.active {
-             color: #ffc107 !important; /* Yellow for active page */
+             color: #509FE4 !important; /* Yellow for active page */
     padding-bottom: 5px;
     font-weight: 700;
         }
@@ -8463,7 +8463,7 @@ body {
 .asquare-chat-icon {
     width: 56px !important;
     height: 56px !important;
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -8509,7 +8509,7 @@ body {
 
 /* Fix header (includes close button icon) */
 .asquare-chat-header {
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     color: white !important;
     padding: 18px 22px !important;
     border-radius: 23px 23px 0 0 !important;
@@ -8592,7 +8592,7 @@ body {
 
 /* Fix user message positioning */
 .asquare-message.user .asquare-message-content {
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     color: white !important;
     border-radius: 20px 20px 4px 20px !important;
     text-align: left !important;
@@ -8626,8 +8626,8 @@ body {
 
 .asquare-quick-btn {
     background: white !important;
-    border: 1.8px solid #EE9D1E !important;
-    color: #EE9D1E !important;
+    border: 1.8px solid #509FE4 !important;
+    color: #509FE4 !important;
     padding: 9px 16px !important;
     border-radius: 27px !important;
     cursor: pointer !important;
@@ -8671,7 +8671,7 @@ body {
     right: 9px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    background: linear-gradient(135deg, #EE9D1E, #d48c1c) !important;
+    background: linear-gradient(135deg, #509FE4, #d48c1c) !important;
     border: none !important;
     width: 41px !important;
     height: 41px !important;
@@ -9069,7 +9069,7 @@ body {
         .contact-icon {
             width: 50px;
             height: 50px;
-            background:#ee9d1e;
+            background:#509FE4;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -9147,7 +9147,7 @@ body {
         
         /* Submit Button */
         .submit-btn {
-            background: #ee9d1e;
+            background: #509FE4;
             color: white;
             border: none;
             padding: 1rem 2rem;
@@ -9164,7 +9164,7 @@ body {
         }
         
         .submit-btn:hover {
-            background: #ee9d1e;
+            background: #509FE4;
         }
         
         /* WhatsApp Notice */
@@ -9326,7 +9326,7 @@ body {
         .gallery-title {
             font-size: 14px;
             font-weight: 600;
-            color: #ee9d1e;
+            color: #509FE4;
             text-align: center;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -9336,7 +9336,7 @@ body {
         .gallery-subtitle {
             font-size: 48px;
             font-weight: 700;
-            color: #ee9d1e;
+            color: #509FE4;
             text-align: center;
             margin-bottom: 80px;
             background: black;

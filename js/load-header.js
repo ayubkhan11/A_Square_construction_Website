@@ -75,27 +75,59 @@ function initializeMobileMenu() {
 }
 
 // Fix navbar gap dynamically
+// Fix navbar gap dynamically - RAF Optimized
 function fixNavbarGap() {
     const navbar = document.querySelector('.fixed-top');
     if (!navbar) return;
     
+    let rafId = null;
+    let lastHeight = 0;
+    
     function updatePadding() {
-        const navbarHeight = navbar.offsetHeight;
-        document.body.style.paddingTop = navbarHeight + 'px';
+        // Cancel any pending RAF
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+        }
+        
+        // Schedule update in next frame
+        rafId = requestAnimationFrame(() => {
+            const navbarHeight = navbar.offsetHeight;
+            
+            // Only update if height changed
+            if (navbarHeight !== lastHeight) {
+                document.body.style.paddingTop = navbarHeight + 'px';
+                lastHeight = navbarHeight;
+            }
+            rafId = null;
+        });
     }
     
-    // Initial update
-    updatePadding();
-    
-    // Update on resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(updatePadding, 100);
-    });
-    
-    // Update after images load
-    window.addEventListener('load', updatePadding);
+    // Use ResizeObserver if available, fallback to resize
+    if ('ResizeObserver' in window) {
+        const observer = new ResizeObserver(updatePadding);
+        observer.observe(navbar);
+        
+        // Also observe body for font loading
+        window.addEventListener('load', () => {
+            setTimeout(updatePadding, 100);
+        });
+        
+        return () => observer.disconnect();
+    } else {
+        // Fallback for older browsers
+        updatePadding(); // Initial
+        
+        // Throttle resize events
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updatePadding, 100);
+        });
+        
+        window.addEventListener('load', () => {
+            setTimeout(updatePadding, 300); // Allow fonts to load
+        });
+    }
 }
 
 // Load header when DOM is ready
