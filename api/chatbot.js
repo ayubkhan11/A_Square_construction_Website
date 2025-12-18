@@ -21,10 +21,13 @@
 import { ChatGroq } from "@langchain/groq";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 
-const chatHistories = new Map();
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};
 
-const systemPrompt = `You are a professional assistant for A Square Construction & Interiors, Krishnagiri.
-Always be polite, short, and helpful.`;
+const chatHistories = new Map();
 
 export default async function handler(req, res) {
   try {
@@ -36,7 +39,9 @@ export default async function handler(req, res) {
       throw new Error("GROQ_API_KEY missing");
     }
 
-    const { message, sessionId = "default" } = req.body || {};
+    const body = req.body || {};
+    const message = body.message;
+    const sessionId = body.sessionId || "default";
 
     if (!message) {
       return res.status(400).json({ error: "Message required" });
@@ -49,7 +54,10 @@ export default async function handler(req, res) {
     });
 
     if (!chatHistories.has(sessionId)) {
-      chatHistories.set(sessionId, [new SystemMessage(systemPrompt)]);
+      chatHistories.set(
+        sessionId,
+        [new SystemMessage("You are a helpful assistant.")]
+      );
     }
 
     const history = chatHistories.get(sessionId);
@@ -62,9 +70,9 @@ export default async function handler(req, res) {
       response: response.content,
     });
   } catch (err) {
-    console.error("🔥 Chatbot Error:", err);
+    console.error("🔥 SERVER ERROR:", err);
     return res.status(500).json({
-      error: "Server crashed",
+      error: "Internal Server Error",
       message: err.message,
     });
   }
