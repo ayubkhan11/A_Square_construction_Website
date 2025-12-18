@@ -21,16 +21,19 @@
 import { ChatGroq } from "@langchain/groq";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
-
 const chatHistories = new Map();
 
 export default async function handler(req, res) {
   try {
+    // ✅ CORS / Preflight support
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+      return res.status(200).end();
+    }
+
     if (req.method !== "POST") {
       return res.status(405).json({ error: "Method not allowed" });
     }
@@ -39,9 +42,7 @@ export default async function handler(req, res) {
       throw new Error("GROQ_API_KEY missing");
     }
 
-    const body = req.body || {};
-    const message = body.message;
-    const sessionId = body.sessionId || "default";
+    const { message, sessionId = "default" } = req.body || {};
 
     if (!message) {
       return res.status(400).json({ error: "Message required" });
@@ -70,7 +71,7 @@ export default async function handler(req, res) {
       response: response.content,
     });
   } catch (err) {
-    console.error("🔥 SERVER ERROR:", err);
+    console.error("🔥 CHATBOT ERROR:", err);
     return res.status(500).json({
       error: "Internal Server Error",
       message: err.message,
