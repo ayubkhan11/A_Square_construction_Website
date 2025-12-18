@@ -196,7 +196,10 @@
      CONFIG
   ============================================================ */
   const CHATBOT_CONFIG = {
-    apiEndpoint: "/api/chatbot",
+    // Use absolute URL for production
+    apiEndpoint: window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/api/chatbot'
+      : '/api/chatbot',
     companyName: "A Square Construction",
     welcomeMessage:
       "Welcome to A Square Construction! We handle residential, commercial, industrial & luxury interior projects. How can I assist you today?",
@@ -263,12 +266,14 @@
   class ASquareChatbot {
     constructor() {
       this.sessionId = "asquare_" + Date.now();
+      this.isProcessing = false;
       this.init();
     }
 
     init() {
       this.createWidget();
       this.bindEvents();
+      this.testConnection();
     }
 
     createWidget() {
@@ -297,6 +302,14 @@
       };
 
       this.chatForm.onsubmit = (e) => this.handleSubmit(e);
+      
+      // Allow Enter key to send message
+      this.messageInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          this.chatForm.dispatchEvent(new Event('submit'));
+        }
+      });
     }
 
     addMessage(text, type) {
@@ -309,19 +322,16 @@
 
       wrapper.appendChild(bubble);
       this.messagesContainer.appendChild(wrapper);
-      this.messagesContainer.scrollTop =
-        this.messagesContainer.scrollHeight;
+      this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
     }
 
     showTyping() {
       const typing = document.createElement("div");
       typing.className = "asquare-message ai typing";
       typing.id = "asquareTyping";
-      typing.innerHTML =
-        '<div class="asquare-message-content">Typing...</div>';
+      typing.innerHTML = '<div class="asquare-message-content"><span class="typing-dots"><span>.</span><span>.</span><span>.</span></span></div>';
       this.messagesContainer.appendChild(typing);
-      this.messagesContainer.scrollTop =
-        this.messagesContainer.scrollHeight;
+      this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
     }
 
     hideTyping() {
@@ -329,46 +339,101 @@
       if (typing) typing.remove();
     }
 
+    async testConnection() {
+      // Test if API is reachable (silent test)
+      try {
+        const res = await fetch(CHATBOT_CONFIG.apiEndpoint, {
+          method: 'OPTIONS',
+        });
+        console.log('API Connection test:', res.ok ? '✓ OK' : '✗ Failed');
+      } catch (err) {
+        console.warn('API may not be available:', err.message);
+      }
+    }
+
     async handleSubmit(e) {
       e.preventDefault();
 
+      if (this.isProcessing) return;
+      
       const message = this.messageInput.value.trim();
       if (!message) return;
 
+      this.isProcessing = true;
       this.addMessage(message, "user");
       this.messageInput.value = "";
       this.showTyping();
 
       try {
+        console.log('Sending to:', CHATBOT_CONFIG.apiEndpoint, 'Message:', message);
+        
         const res = await fetch(CHATBOT_CONFIG.apiEndpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
           body: JSON.stringify({
             message,
             sessionId: this.sessionId,
           }),
         });
 
-        if (!res.ok) throw new Error("API Error");
+        console.log('Response status:', res.status, res.statusText);
+        
+        if (!res.ok) {
+          let errorMsg = `Server error: ${res.status}`;
+          try {
+            const errorData = await res.json();
+            errorMsg = errorData.error || errorData.message || errorMsg;
+          } catch (e) {
+            // Couldn't parse JSON error
+          }
+          throw new Error(errorMsg);
+        }
 
         const data = await res.json();
+        console.log('Response data:', data);
+        
         this.hideTyping();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
+        if (!data.response) {
+          throw new Error('No response from server');
+        }
+        
         this.addMessage(data.response, "ai");
       } catch (err) {
+        console.error('Chatbot error:', err);
         this.hideTyping();
-        this.addMessage(
-          "Sorry, we are facing a technical issue. Please try again later.",
-          "ai"
-        );
+        
+        // User-friendly error messages
+        let errorMessage = "Sorry, we're experiencing technical difficulties. ";
+        
+        if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+          errorMessage += "Please check your internet connection and try again.";
+        } else if (err.message.includes('500')) {
+          errorMessage += "Our servers are temporarily unavailable. Please try again in a few minutes.";
+        } else if (err.message.includes('405')) {
+          errorMessage += "The chat service is currently undergoing maintenance.";
+        } else {
+          errorMessage += "Please try again later or contact us directly.";
+        }
+        
+        this.addMessage(errorMessage, "ai");
+      } finally {
+        this.isProcessing = false;
+        this.messageInput.focus();
       }
     }
 
     static sendQuickMessage(message) {
-      if (window.asquareChatbotInstance) {
+      if (window.asquareChatbotInstance && !window.asquareChatbotInstance.isProcessing) {
         window.asquareChatbotInstance.messageInput.value = message;
-        window.asquareChatbotInstance.chatForm.dispatchEvent(
-          new Event("submit")
-        );
+        window.asquareChatbotInstance.chatForm.dispatchEvent(new Event("submit"));
       }
     }
   }
@@ -380,9 +445,19 @@
     if (window.asquareChatbotInstance) return;
     window.asquareChatbotInstance = new ASquareChatbot();
     window.ASquareChatbot = ASquareChatbot;
+    
+    // Add a debug helper
+    window.debugChatbot = function() {
+      console.log('Chatbot instance:', window.asquareChatbotInstance);
+      console.log('Config:', CHATBOT_CONFIG);
+      console.log('Session ID:', window.asquareChatbotInstance.sessionId);
+    };
   }
 
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", init)
-    : init();
+  // Wait for DOM to be ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
