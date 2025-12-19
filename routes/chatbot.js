@@ -43,7 +43,7 @@ Rules:
 Contact Details (use exactly):
 Phone & WhatsApp: +91 9940792792
 Email: asquareconstruction12@gmail.com
-Website: https://a-square-construction.vercel.app
+Website: https://asquare-constructions.in/
 
 Reply in a natural, South Indian professional tone.`;
 

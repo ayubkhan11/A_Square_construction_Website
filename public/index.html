@@ -32,7 +32,7 @@
 
     <!-- Header CSS (loads immediately) -->
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/style-liberty.css">
+    <link rel="stylesheet" href="/css/style-liberty.css" />
 
     <!-- Favicon - Basic -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -140,8 +140,8 @@
 
       body {
         max-width: 100%;
-overflow-x: hidden;     /* Keep horizontal control */
-    overflow-y: auto;       /* or visible – allows fixed elements */
+        overflow-x: hidden; /* Keep horizontal control */
+        overflow-y: auto; /* or visible – allows fixed elements */
         position: relative;
         margin: 0 !important;
         padding: 0 !important;
@@ -205,7 +205,7 @@ overflow-x: hidden;     /* Keep horizontal control */
       }
 
       .navbar-brand span:first-child {
-        color: #509FE4;
+        color: #509fe4;
         margin-right: 2px;
       }
 
@@ -467,7 +467,7 @@ overflow-x: hidden;     /* Keep horizontal control */
       }
 
       .w3yellow {
-        color: #509FE4;
+        color: #509fe4;
       }
 
       .title-w3l {
@@ -479,7 +479,7 @@ overflow-x: hidden;     /* Keep horizontal control */
       .title-subw3hny {
         font-size: 0.9rem;
         text-transform: uppercase;
-        color: #509FE4;
+        color: #509fe4;
         letter-spacing: 1px;
       }
 
@@ -562,1066 +562,1115 @@ overflow-x: hidden;     /* Keep horizontal control */
     </style>
   </head>
   <body>
-
     <div class="site-wrapper">
-    <!-- Skip to main content link -->
-    <a href="#home" class="skip-to-content">Skip to main content</a>
+      <!-- Skip to main content link -->
+      <a href="#home" class="skip-to-content">Skip to main content</a>
 
-    <!-- ====== OPTIMIZED HERO – ONLY AVIF + WEBP ====== -->
-    <section
-      class="w3l-main-slider position-relative"
-      id="home"
-      aria-label="Homepage banner carousel"
-    >
-      <div class="owl-one owl-carousel owl-theme">
-        <!-- Slide 1 - Primary LCP Candidate -->
-        <div class="item">
-          <div class="slider-info banner-view position-relative">
-            <picture class="d-block w-100">
-              <!-- AVIF responsive sources -->
-              <source
-                type="image/avif"
-                srcset="
-                  /images/banner1-800.avif   800w,
-                  /images/banner1-1200.avif 1200w,
-                  /images/banner1-1920.avif 1920w
-                "
-                sizes="100vw"
-              />
-
-              <!-- WebP fallback responsive sources -->
-              <source
-                type="image/webp"
-                srcset="
-                  /images/banner1-800.webp   800w,
-                  /images/banner1-1200.webp 1200w,
-                  /images/banner1-1920.webp 1920w
-                "
-                sizes="100vw"
-              />
-
-              <!-- Fallback img element -->
-              <img
-                src="/images/banner1-1200.webp"
-                srcset="
-                  /images/banner1-800.webp   800w,
-                  /images/banner1-1200.webp 1200w,
-                  /images/banner1-1920.webp 1920w
-                "
-                sizes="100vw"
-                alt="Inspirational Interior Designs"
-                width="1200"
-                height="805"
-                fetchpriority="high"
-                decoding="async"
-                loading="eager"
-                class="img-fluid hero-lcp-image"
-              />
-            </picture>
-
-            <div class="banner-overlay"></div>
-
-            <div
-              class="container position-absolute top-50 start-50 translate-middle text-center text-white"
-            >
-              <div class="banner-info header-hero-19">
-                <h5 class="mb-3 banner-subtitle">The Promise</h5>
-                <h2 class="title-hero-19 display-4 fw-bold text-white">
-                  Built to Last. Built for You.
-                </h2>
-                <a
-                  href="about.html"
-                  class="btn btn-style btn-banner mt-4"
-                  aria-label="Read more about our services"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="item">
-          <div class="slider-info banner-view position-relative">
-            <picture class="d-block w-100">
-              <source
-                type="image/avif"
-                srcset="
-                  /images/banner2-800.avif   800w,
-                  /images/banner2-1200.avif 1200w,
-                  /images/banner2-1920.avif 1920w
-                "
-                sizes="100vw"
-              />
-
-              <source
-                type="image/webp"
-                srcset="
-                  /images/banner2-800.webp   800w,
-                  /images/banner2-1200.webp 1200w,
-                  /images/banner2-1920.webp 1920w
-                "
-                sizes="100vw"
-              />
-
-              <img
-                src="/images/banner2-1200.webp"
-                srcset="
-                  /images/banner2-800.webp   800w,
-                  /images/banner2-1200.webp 1200w,
-                  /images/banner2-1920.webp 1920w
-                "
-                sizes="100vw"
-                alt="Designing Dreams – Decorate Ideas"
-                width="1200"
-                height="679"
-                loading="lazy"
-                decoding="async"
-                class="img-fluid"
-              />
-            </picture>
-
-            <div class="banner-overlay"></div>
-
-            <div
-              class="container position-absolute top-50 start-50 translate-middle text-center text-white"
-            >
-              <div class="banner-info header-hero-19">
-                <h5 class="mb-3 banner-subtitle">The Expertise</h5>
-                <h2 class="title-hero-19 display-4 fw-bold text-white">
-                  From Blueprint to Reality.
-                </h2>
-                <a
-                  href="about.html"
-                  class="btn btn-style btn-banner mt-4"
-                  aria-label="Read more about our services"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="item">
-          <div class="slider-info banner-view position-relative">
-            <picture class="d-block w-100">
-              <source
-                type="image/avif"
-                srcset="
-                  /images/banner3-800.avif   800w,
-                  /images/banner3-1200.avif 1200w,
-                  /images/banner3-1920.avif 1920w
-                "
-                sizes="100vw"
-              />
-
-              <source
-                type="image/webp"
-                srcset="
-                  /images/banner3-800.webp   800w,
-                  /images/banner3-1200.webp 1200w,
-                  /images/banner3-1920.webp 1920w
-                "
-                sizes="100vw"
-              />
-
-              <img
-                src="/images/banner3-1200.webp"
-                srcset="
-                  /images/banner3-800.webp   800w,
-                  /images/banner3-1200.webp 1200w,
-                  /images/banner3-1920.webp 1920w
-                "
-                sizes="100vw"
-                alt="Modern Interior Solutions"
-                width="1200"
-                height="679"
-                loading="lazy"
-                decoding="async"
-                class="img-fluid"
-              />
-            </picture>
-
-            <div class="banner-overlay"></div>
-
-            <div
-              class="container position-absolute top-50 start-50 translate-middle text-center text-white"
-            >
-              <div class="banner-info header-hero-19">
-                <h5 class="mb-3 banner-subtitle">The Difference</h5>
-                <h2 class="title-hero-19 display-4 fw-bold text-white">
-                  Innovating Spaces, Building Futures.
-                </h2>
-                <a
-                  href="about.html"
-                  class="btn btn-style btn-banner mt-4"
-                  aria-label="Read more about our services"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3-grids -->
-    <div class="w3l-3-grids py-5" id="grids-3">
-      <div class="container-fluid py-md-5 py-2">
-        <div class="row mb-5 pb-lg-4">
-          <div class="col-lg-6 pe-lg-5">
-            <div class="title-content text-left">
-              <h6 class="title-subw3hny mb-1" style="color: #509FE4">
-                About Us
-              </h6>
-              <h3 class="title-w3l">
-                We provide you the quality with perfect credibility
-              </h3>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4 ps-lg-5">
-            <p class="pr-lg-5">
-              A Square Construction, founded in 2014 by K.P.Zakir Hussain, is a
-              trusted construction company delivering high-quality residential
-              and commercial projects. With 10+ years of experience and 20+
-              completed projects, the company is known for its commitment to
-              craftsmanship, durability, and transparent project execution.
-            </p>
-          </div>
-        </div>
-
-        <div class="image-row-container">
-          <!-- Card 1 -->
-          <div class="image-card">
-            <a href="#">
-              <img
-                src="/images/interior2-800.avif"
-                srcset="
-                  images/interior2-400.avif   400w,
-                  images/interior2-800.avif   800w,
-                  images/interior2-1200.avif 1200w
-                "
-                sizes="(max-width: 576px) 400px,
-                               (max-width: 992px) 800px,
-                               1200px"
-                width="800"
-                height="600"
-                loading="lazy"
-                alt="Living room interior"
-                decoding="async"
-                class="img-fluid news-image"
-              />
-              <div class="image-card-text">
-                <h6><a href="#category" class="category">Living</a></h6>
-                <h4><a href="#">Meet the new creativity</a></h4>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="image-card">
-            <a href="#">
-              <img
-                src="/images/interior-800.avif"
-                srcset="
-                  images/interior-400.avif   400w,
-                  images/interior-800.avif   800w,
-                  images/interior-1200.avif 1200w
-                "
-                sizes="(max-width: 576px) 400px,
-                               (max-width: 992px) 800px,
-                               1200px"
-                width="800"
-                height="600"
-                loading="lazy"
-                alt="Interior design"
-                decoding="async"
-                class="img-fluid news-image"
-              />
-              <div class="image-card-text">
-                <h6>
-                  <a href="#category" class="category">Designs</a>
-                </h6>
-                <h4><a href="#">Interior that reflects you</a></h4>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="image-card">
-            <a href="#">
-              <img
-                src="/images/interior5-800.avif"
-                srcset="
-                  images/interior5-400.avif   400w,
-                  images/interior5-800.avif   800w,
-                  images/interior5-1200.avif 1200w
-                "
-                sizes="(max-width: 576px) 400px,
-                               (max-width: 992px) 800px,
-                               1200px"
-                width="800"
-                height="600"
-                loading="lazy"
-                alt="Innovative interior"
-                decoding="async"
-                class="img-fluid news-image"
-              />
-              <div class="image-card-text">
-                <h6>
-                  <a href="#category" class="category">Innovative</a>
-                </h6>
-                <h4><a href="#">Innovative stylish ideas</a></h4>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- ✅ CORRECT: Changed from </section> to </div> -->
-    </div>
-    <!-- passion -->
-    <section class="w3l-passion-mid-sec py-5">
-      <div class="container py-md-5 py-3">
-        <div class="row w3l-passion-mid-grids">
-          <div class="col-lg-6 passion-grid-item-info pe-lg-5 mb-lg-0 mb-5">
-            <div class="content-8-img">
-              <img
-                src="/images/interior3.avif"
-                width="800"
-                height="600"
-                loading="lazy"
-                alt="Luxury apartment interior"
-                class="img-fluid radius-image"
-              />
-            </div>
-          </div>
-          <div class="col-lg-6 w3hny-passion-item w3l-content-8">
-            <h6 class="title-subw3hny mb-1" style="color: #509FE4">
-              What We Offer
-            </h6>
-            <h3 class="title-w3l mb-3">
-              The Luxury Apartment of special interiors.
-            </h3>
-            <p class="mb-5">
-              Discover The Luxury Apartment of special interiors and learn how
-              premium interior design transforms residential, commercial,
-              industrial, and office spaces with elegance and functionality.
-            </p>
-            <ul class="w3-list-icons-grids">
-              <li class="icon-list-item-gd">
-                <div class="icon-gd">
-                  <i class="fas fa-hotel" aria-hidden="true"></i>
-                </div>
-                <div class="icon-inf">
-                  <h5>Residential</h5>
-                  <p class="text-para">
-                    Thoughtfully designed spaces for modern living
-                  </p>
-                </div>
-              </li>
-              <li class="icon-list-item-gd">
-                <div class="icon-gd">
-                  <i class="fas fa-door-open" aria-hidden="true"></i>
-                </div>
-                <div class="icon-inf">
-                  <h5>Commercial</h5>
-                  <p class="text-para">
-                    Elegant interiors that enhance brand appeal.
-                  </p>
-                </div>
-              </li>
-              <li class="icon-list-item-gd">
-                <div class="icon-gd">
-                  <i class="fas fa-industry" aria-hidden="true"></i>
-                </div>
-                <div class="icon-inf">
-                  <h5>Industries</h5>
-                  <p class="text-para">
-                    Practical and efficient industrial setups.
-                  </p>
-                </div>
-              </li>
-              <li class="icon-list-item-gd">
-                <div class="icon-gd">
-                  <i class="fas fa-building" aria-hidden="true"></i>
-                </div>
-                <div class="icon-inf">
-                  <h5>Office</h5>
-                  <p class="text-para">
-                    Smart workspaces built for productivity.
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <div class="w3banner-content-btns">
-              <a
-                href="about.html"
-                class="btn btn-style btn-primary mt-lg-5 mt-4 me-2"
-                aria-label="Read more about our services"
-                >Read More</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- gallery -->
-    <section class="gallery-section" id="gallery">
-  <div class="destionation-innf py-5">
-    <div class="container py-lg-5 py-md-4 py-2 HomePageGallery">
-      <h6 class="gallery-title">Gallery</h6>
-      <h3 class="gallery-subtitle">Latest Projects</h3>
-      <ul class="gallery_agile" role="list">
-        <li>
-          <div class="w3_agile_portfolio_grid">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/land-1.avif" alt="Land Project 1" loading="lazy" />
-            </a>
-          </div>
-          <div class="w3_agile_portfolio_grid mt-4">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/construction-1.avif" alt="Construction 1" loading="lazy" />
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="w3_agile_portfolio_grid">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/construction-2.avif" alt="Construction 2" loading="lazy" />
-            </a>
-          </div>
-          <div class="w3_agile_portfolio_grid mt-4">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/construction-3.avif" alt="Construction 3" loading="lazy" />
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="w3_agile_portfolio_grid">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/land-2.avif" alt="Land Project 2" loading="lazy" />
-            </a>
-          </div>
-          <div class="w3_agile_portfolio_grid mt-4">
-            <a href="gallery.html" aria-label="View Project Gallery">
-              <img src="/images/construction-4.avif" alt="Construction 4" loading="lazy" />
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-    <!-- stats -->
-    <section class="w3l-midslider py-5" id="midslider">
-      <div class="container py-md-5">
-        <div class="row">
-          <div class="col-lg-5 title-content text-left pe-lg-5 mb-lg-0 mb-5">
-            <div
-              class="heading-wrapper"
-              style="max-width: 100%; margin: 0 auto; padding-left: 0"
-            >
-              <h6
-                class="title-subw3hny mb-1 text-center"
-                style="color: #509FE4; display: block"
-              >
-                Stats
-              </h6>
-              <h3 class="title-w3l mb-3 text-center" style="display: block">
-                Modern Of Living
-              </h3>
-            </div>
-            <p class="mb-5">
-              A Square construction has built a powerful reputation in the
-              construction industry, delivering top-quality work across
-              residential and commercial projects. With 20+ completed projects
-              and 100+ happy clients,
-            </p>
-            <div class="row w3l-stats-section stats-con mt-4" id="stats">
-              <div class="col-6 stats_info counter_grid">
-                <p class="counter">20+</p>
-                <h3>Projects</h3>
-              </div>
-              <div class="col-6 stats_info counter_grid">
-                <p class="counter">100+</p>
-                <h3>Happy Clients</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-7 testimonial-width midslider-width ps-lg-3">
-            <div class="row g-3">
-              <div class="col-6">
-                <img
-                  src="/images/banner2-800.avif"
-                  width="800"
-                  height="600"
-                  loading="lazy"
-                  alt="Completed project 1"
-                  class="img-fluid radius-image w-100"
+      <!-- ====== OPTIMIZED HERO – ONLY AVIF + WEBP ====== -->
+      <section
+        class="w3l-main-slider position-relative"
+        id="home"
+        aria-label="Homepage banner carousel"
+      >
+        <div class="owl-one owl-carousel owl-theme">
+          <!-- Slide 1 - Primary LCP Candidate -->
+          <div class="item">
+            <div class="slider-info banner-view position-relative">
+              <picture class="d-block w-100">
+                <!-- AVIF responsive sources -->
+                <source
+                  type="image/avif"
+                  srcset="
+                    /images/banner1-800.avif   800w,
+                    /images/banner1-1200.avif 1200w,
+                    /images/banner1-1920.avif 1920w
+                  "
+                  sizes="100vw"
                 />
-              </div>
-              <div class="col-6">
-                <img
-                  src="/images/banner3-800.avif"
-                  width="800"
-                  height="600"
-                  loading="lazy"
-                  alt="Completed project 2"
-                  class="img-fluid radius-image w-100"
+
+                <!-- WebP fallback responsive sources -->
+                <source
+                  type="image/webp"
+                  srcset="
+                    /images/banner1-800.webp   800w,
+                    /images/banner1-1200.webp 1200w,
+                    /images/banner1-1920.webp 1920w
+                  "
+                  sizes="100vw"
                 />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- blog -->
-    <section
-      class="w3l-text-11 py-5 pt-0"
-      style="font-family: 'Poppins', sans-serif"
-    >
-      <div class="text11 py-md-5 py-2 pt-0">
-        <div class="container-fluid p-0">
-          <div
-            class="title-content force-perfect-center blog-section-title mb-5 py-4"
-          >
-            <h6
-              class="text-uppercase letter-spacing-2 fw-bold mb-2"
-              style="color: #509FE4; font-size: 0.95rem"
-            >
-              Our Insights
-            </h6>
-            <h3
-              class="fw-bold"
-              style="
-                color: #1a1a1a;
-                font-size: 2.8rem;
-                margin: 0;
-                line-height: 1.2;
-              "
-            >
-              Latest Blog Posts
-            </h3>
-          </div>
-          <div class="row text11-content g-4">
-            <div class="col-lg-4 mt-5">
+                <!-- Fallback img element -->
+                <img
+                  src="/images/banner1-1200.webp"
+                  srcset="
+                    /images/banner1-800.webp   800w,
+                    /images/banner1-1200.webp 1200w,
+                    /images/banner1-1920.webp 1920w
+                  "
+                  sizes="100vw"
+                  alt="Inspirational Interior Designs"
+                  width="1200"
+                  height="805"
+                  fetchpriority="high"
+                  decoding="async"
+                  loading="eager"
+                  class="img-fluid hero-lcp-image"
+                />
+              </picture>
+
+              <div class="banner-overlay"></div>
+
               <div
-                class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
-                style="font-family: 'Poppins', sans-serif"
+                class="container position-absolute top-50 start-50 translate-middle text-center text-white"
               >
-                <div class="card-header p-0 position-relative border-0">
-                  <div class="blog-img-container overflow-hidden">
-                    <img
-                      class="card-img-bottom d-block radius-image w-100"
-                      src="/images/g7.avif"
-                      width="600"
-                      height="400"
-                      loading="lazy"
-                      alt="Modern interior design"
-                      class="img-fluid radius-image"
-                      style="height: 250px; object-fit: cover"
-                    />
-                    <div
-                      class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
-                      style="font-family: 'Poppins', sans-serif"
-                    >
-                      Jan 23, 2021
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body p-4 blog-details">
-                  <div class="blog-meta mb-2">
-                    <span
-                      class="admin"
-                      style="color: #888; font-family: 'Poppins', sans-serif"
-                      ><i class="fas fa-user me-1" aria-hidden="true"></i>by
-                      Admin</span
-                    >
-                  </div>
-                  <h4
-                    class="blog-title mb-3 fw-bold"
-                    style="
-                      font-size: 1.3rem;
-                      line-height: 1.4;
-                      color: #1a1a1a;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    Top Interior Design Practices to Make Your Home Look Premium
-                  </h4>
-                  <div class="blog-content-divider mb-3"></div>
-                  <p
-                    class="blog-excerpt mb-0"
-                    style="
-                      line-height: 1.7;
-                      font-size: 0.95rem;
-                      color: #555;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    Modern interior design focuses on clean lines, warm
-                    textures, natural lighting, and smart space planning to
-                    create a peaceful environment.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 mt-5">
-              <div
-                class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
-                style="font-family: 'Poppins', sans-serif"
-              >
-                <div class="card-header p-0 position-relative border-0">
-                  <div class="blog-img-container overflow-hidden">
-                    <img
-                      class="card-img-bottom d-block radius-image w-100"
-                      src="/images/g8.avif"
-                      width="600"
-                      height="400"
-                      loading="lazy"
-                      alt="Modern interior design"
-                      class="img-fluid radius-image"
-                      style="height: 250px; object-fit: cover"
-                    />
-
-                    <div
-                      class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
-                      style="font-family: 'Poppins', sans-serif"
-                    >
-                      Feb 18, 2022
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body p-4 blog-details">
-                  <div class="blog-meta mb-2">
-                    <span
-                      class="admin"
-                      style="color: #888; font-family: 'Poppins', sans-serif"
-                      ><i class="fas fa-user me-1" aria-hidden="true"></i>by
-                      Admin</span
-                    >
-                  </div>
-                  <h4
-                    class="blog-title mb-3 fw-bold"
-                    style="
-                      font-size: 1.3rem;
-                      line-height: 1.4;
-                      color: #1a1a1a;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    How to Choose the Perfect Interior Style for Your Home
-                  </h4>
-                  <div class="blog-content-divider mb-3"></div>
-                  <p
-                    class="blog-excerpt mb-0"
-                    style="
-                      line-height: 1.7;
-                      font-size: 0.95rem;
-                      color: #555;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    The key is to match your interior design with your
-                    lifestyle, space size, and natural lighting, whether it's
-                    handcrafted décor or natural materials.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 mt-5">
-              <div
-                class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
-                style="font-family: 'Poppins', sans-serif"
-              >
-                <div class="card-header p-0 position-relative border-0">
-                  <div class="blog-img-container overflow-hidden">
-                    <img
-                      class="card-img-bottom d-block radius-image w-100"
-                      src="/images/g6.avif"
-                      width="600"
-                      height="400"
-                      loading="lazy"
-                      alt="Modern interior design"
-                      class="img-fluid radius-image"
-                      style="height: 250px; object-fit: cover"
-                    />
-
-                    <div
-                      class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
-                      style="font-family: 'Poppins', sans-serif"
-                    >
-                      Dec 31, 2024
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body p-4 blog-details">
-                  <div class="blog-meta mb-2">
-                    <span
-                      class="admin"
-                      style="color: #888; font-family: 'Poppins', sans-serif"
-                      ><i class="fas fa-user me-1" aria-hidden="true"></i>by
-                      Admin</span
-                    >
-                  </div>
-                  <h4
-                    class="blog-title mb-3 fw-bold"
-                    style="
-                      font-size: 1.3rem;
-                      line-height: 1.4;
-                      color: #1a1a1a;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    Modern Kitchen Renovation Ideas to Enhance Space &
-                    Functionality
-                  </h4>
-                  <div class="blog-content-divider mb-3"></div>
-                  <p
-                    class="blog-excerpt mb-0"
-                    style="
-                      line-height: 1.7;
-                      font-size: 0.95rem;
-                      color: #555;
-                      font-family: 'Poppins', sans-serif;
-                    "
-                  >
-                    A-Square Construction specializes in modular kitchen
-                    layouts, seamless cabinetry, premium countertops, and
-                    space-saving designs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- cta -->
-    <section class="w3l-join-main py-5">
-      <div class="container py-md-3">
-        <div class="w3l-project-in">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="bottom-info">
-                <div class="header-section pe-lg-5">
-                  <h5 class="title-subw3hny mb-3">Get Consultation</h5>
-                  <h3 class="title-w3l mb-3">
-                    GET INCREDIBLE PROJECT ESTIMATION & CONSULTATION FOR FREE
-                  </h3>
-                  <p>
-                    At every stage, we oversee your project—managing every
-                    detail and providing expert guidance to the builders.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 align-self mt-lg-0 mt-sm-5 mt-4">
-              <div class="w3l-buttons d-sm-flex justify-content-end">
-                <a
-      href="tel:+91 9940792792"
-      aria-label="Call now for a consultation"
-      class="btn btn-style transparant-btn ms-sm-2"
-      >Call Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- testimonials -->
-    <section class="w3l-testimonials" id="testimonials">
-      <div class="cusrtomer-layout py-5">
-        <div class="container-fluid py-lg-4 py-md-3 py-2 pb-lg-0">
-          <div class="title-content force-perfect-center mb-5 py-4">
-            <h6
-              class="text-uppercase letter-spacing-2 fw-bold mb-3"
-              style="color: #509FE4; font-size: 0.95rem"
-            >
-              Testimonials
-            </h6>
-            <h3
-              class="fw-bold"
-              style="
-                color: #1a1a1a;
-                font-size: 2.8rem;
-                margin: 0;
-                line-height: 1.3;
-                max-width: 900px;
-              "
-            >
-              What some of our happy clients<br class="d-block d-lg-none" />
-              say about us
-            </h3>
-          </div>
-          <div class="testimonial-width">
-            <div class="row justify-content-center">
-              <!-- Testimonial 1 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <div class="testimonial-gds-1">
-                      <div class="testi-des">
-                        <div class="peopl align-self">
-                          <h3>Ameena Zak</h3>
-                          <p class="indentity">Krishnagiri</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="quote-info">
-                      <i class="fas fa-quote-left me-2" aria-hidden="true"></i
-                      >Doing amazing, everything is unique with neat work and
-                      also customising as per our wish, simply go ahead,worth
-                      for money , moreover trustworthy dolore.<i
-                        class="fas fa-quote-right ms-2"
-                        aria-hidden="true"
-                      ></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 2 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <div class="testimonial-gds-1">
-                      <div class="testi-des">
-                        <div class="peopl align-self">
-                          <h3>Zakir Khan</h3>
-                          <p class="indentity">Krishnagiri</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="quote-info">
-                      <i class="fas fa-quote-left me-2" aria-hidden="true"></i
-                      >Nice Work.<i
-                        class="fas fa-quote-right ms-2"
-                        aria-hidden="true"
-                      ></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 3 -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <div class="testimonial-gds-1">
-                      <div class="testi-des">
-                        <div class="peopl align-self">
-                          <h3>Ayub Khan</h3>
-                          <p class="indentity">Bangalore</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="quote-info">
-                      <i class="fas fa-quote-left me-2" aria-hidden="true"></i
-                      >We hired Asquare Constructions for a turnkey renovation
-                      project, and the entire process was smooth—from design to
-                      final handover. Excellent quality, great attention to
-                      detail. Highly recommended in Krishnagiri.<i
-                        class="fas fa-quote-right ms-2"
-                        aria-hidden="true"
-                      ></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- footer -->
-    <footer class="w3l-footer-29-main">
-      <div class="footer-29 py-4 w-100">
-        <div class="container-fluid px-0">
-          <div class="row footer-top-29 mx-0 gx-0 gy-4 justify-content-center">
-            <!-- About Section -->
-            <div
-              class="col-12 col-lg-3 footer-list-29 footer-1 d-flex justify-content-center justify-content-lg-start ps-lg-4 ps-xl-5"
-            >
-              <div class="text-lg-start">
-                <div class="mb-3 text-center">
+                <div class="banner-info header-hero-19">
+                  <h5 class="mb-3 banner-subtitle">The Promise</h5>
+                  <h2 class="title-hero-19 display-4 fw-bold text-white">
+                    Built to Last. Built for You.
+                  </h2>
                   <a
-                    class="navbar-brand text-decoration-none d-inline-block"
-                    href="index.html"
-                    aria-label="ASQUARE Construction Company Home"
+                    href="about.html"
+                    class="btn btn-style btn-banner mt-4"
+                    aria-label="Read more about our services"
+                    >Read More</a
                   >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="item">
+            <div class="slider-info banner-view position-relative">
+              <picture class="d-block w-100">
+                <source
+                  type="image/avif"
+                  srcset="
+                    /images/banner2-800.avif   800w,
+                    /images/banner2-1200.avif 1200w,
+                    /images/banner2-1920.avif 1920w
+                  "
+                  sizes="100vw"
+                />
+
+                <source
+                  type="image/webp"
+                  srcset="
+                    /images/banner2-800.webp   800w,
+                    /images/banner2-1200.webp 1200w,
+                    /images/banner2-1920.webp 1920w
+                  "
+                  sizes="100vw"
+                />
+
+                <img
+                  src="/images/banner2-1200.webp"
+                  srcset="
+                    /images/banner2-800.webp   800w,
+                    /images/banner2-1200.webp 1200w,
+                    /images/banner2-1920.webp 1920w
+                  "
+                  sizes="100vw"
+                  alt="Designing Dreams – Decorate Ideas"
+                  width="1200"
+                  height="679"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                />
+              </picture>
+
+              <div class="banner-overlay"></div>
+
+              <div
+                class="container position-absolute top-50 start-50 translate-middle text-center text-white"
+              >
+                <div class="banner-info header-hero-19">
+                  <h5 class="mb-3 banner-subtitle">The Expertise</h5>
+                  <h2 class="title-hero-19 display-4 fw-bold text-white">
+                    From Blueprint to Reality.
+                  </h2>
+                  <a
+                    href="about.html"
+                    class="btn btn-style btn-banner mt-4"
+                    aria-label="Read more about our services"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="item">
+            <div class="slider-info banner-view position-relative">
+              <picture class="d-block w-100">
+                <source
+                  type="image/avif"
+                  srcset="
+                    /images/banner3-800.avif   800w,
+                    /images/banner3-1200.avif 1200w,
+                    /images/banner3-1920.avif 1920w
+                  "
+                  sizes="100vw"
+                />
+
+                <source
+                  type="image/webp"
+                  srcset="
+                    /images/banner3-800.webp   800w,
+                    /images/banner3-1200.webp 1200w,
+                    /images/banner3-1920.webp 1920w
+                  "
+                  sizes="100vw"
+                />
+
+                <img
+                  src="/images/banner3-1200.webp"
+                  srcset="
+                    /images/banner3-800.webp   800w,
+                    /images/banner3-1200.webp 1200w,
+                    /images/banner3-1920.webp 1920w
+                  "
+                  sizes="100vw"
+                  alt="Modern Interior Solutions"
+                  width="1200"
+                  height="679"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                />
+              </picture>
+
+              <div class="banner-overlay"></div>
+
+              <div
+                class="container position-absolute top-50 start-50 translate-middle text-center text-white"
+              >
+                <div class="banner-info header-hero-19">
+                  <h5 class="mb-3 banner-subtitle">The Difference</h5>
+                  <h2 class="title-hero-19 display-4 fw-bold text-white">
+                    Innovating Spaces, Building Futures.
+                  </h2>
+                  <a
+                    href="about.html"
+                    class="btn btn-style btn-banner mt-4"
+                    aria-label="Read more about our services"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3-grids -->
+      <div class="w3l-3-grids py-5" id="grids-3">
+        <div class="container-fluid py-md-5 py-2">
+          <div class="row mb-5 pb-lg-4">
+            <div class="col-lg-6 pe-lg-5">
+              <div class="title-content text-left">
+                <h6 class="title-subw3hny mb-1" style="color: #509fe4">
+                  About Us
+                </h6>
+                <h3 class="title-w3l">
+                  We provide you the quality with perfect credibility
+                </h3>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4 ps-lg-5">
+              <p class="pr-lg-5">
+                A Square Construction, founded in 2014 by K.P.Zakir Hussain, is
+                a trusted construction company delivering high-quality
+                residential and commercial projects. With 10+ years of
+                experience and 20+ completed projects, the company is known for
+                its commitment to craftsmanship, durability, and transparent
+                project execution.
+              </p>
+            </div>
+          </div>
+
+          <div class="image-row-container">
+            <!-- Card 1 -->
+            <div class="image-card">
+              <a href="#">
+                <img
+                  src="/images/interior2-800.avif"
+                  srcset="
+                    images/interior2-400.avif   400w,
+                    images/interior2-800.avif   800w,
+                    images/interior2-1200.avif 1200w
+                  "
+                  sizes="(max-width: 576px) 400px,
+                               (max-width: 992px) 800px,
+                               1200px"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  alt="Living room interior"
+                  decoding="async"
+                  class="img-fluid news-image"
+                />
+                <div class="image-card-text">
+                  <h6><a href="#category" class="category">Living</a></h6>
+                  <h4><a href="#">Meet the new creativity</a></h4>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="image-card">
+              <a href="#">
+                <img
+                  src="/images/interior-800.avif"
+                  srcset="
+                    images/interior-400.avif   400w,
+                    images/interior-800.avif   800w,
+                    images/interior-1200.avif 1200w
+                  "
+                  sizes="(max-width: 576px) 400px,
+                               (max-width: 992px) 800px,
+                               1200px"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  alt="Interior design"
+                  decoding="async"
+                  class="img-fluid news-image"
+                />
+                <div class="image-card-text">
+                  <h6>
+                    <a href="#category" class="category">Designs</a>
+                  </h6>
+                  <h4><a href="#">Interior that reflects you</a></h4>
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="image-card">
+              <a href="#">
+                <img
+                  src="/images/interior5-800.avif"
+                  srcset="
+                    images/interior5-400.avif   400w,
+                    images/interior5-800.avif   800w,
+                    images/interior5-1200.avif 1200w
+                  "
+                  sizes="(max-width: 576px) 400px,
+                               (max-width: 992px) 800px,
+                               1200px"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  alt="Innovative interior"
+                  decoding="async"
+                  class="img-fluid news-image"
+                />
+                <div class="image-card-text">
+                  <h6>
+                    <a href="#category" class="category">Innovative</a>
+                  </h6>
+                  <h4><a href="#">Innovative stylish ideas</a></h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ✅ CORRECT: Changed from </section> to </div> -->
+      </div>
+      <!-- passion -->
+      <section class="w3l-passion-mid-sec py-5">
+        <div class="container py-md-5 py-3">
+          <div class="row w3l-passion-mid-grids">
+            <div class="col-lg-6 passion-grid-item-info pe-lg-5 mb-lg-0 mb-5">
+              <div class="content-8-img">
+                <img
+                  src="/images/interior3.avif"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  alt="Luxury apartment interior"
+                  class="img-fluid radius-image"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 w3hny-passion-item w3l-content-8">
+              <h6 class="title-subw3hny mb-1" style="color: #509fe4">
+                What We Offer
+              </h6>
+              <h3 class="title-w3l mb-3">
+                The Luxury Apartment of special interiors.
+              </h3>
+              <p class="mb-5">
+                Discover The Luxury Apartment of special interiors and learn how
+                premium interior design transforms residential, commercial,
+                industrial, and office spaces with elegance and functionality.
+              </p>
+              <ul class="w3-list-icons-grids">
+                <li class="icon-list-item-gd">
+                  <div class="icon-gd">
+                    <i class="fas fa-hotel" aria-hidden="true"></i>
+                  </div>
+                  <div class="icon-inf">
+                    <h5>Residential</h5>
+                    <p class="text-para">
+                      Thoughtfully designed spaces for modern living
+                    </p>
+                  </div>
+                </li>
+                <li class="icon-list-item-gd">
+                  <div class="icon-gd">
+                    <i class="fas fa-door-open" aria-hidden="true"></i>
+                  </div>
+                  <div class="icon-inf">
+                    <h5>Commercial</h5>
+                    <p class="text-para">
+                      Elegant interiors that enhance brand appeal.
+                    </p>
+                  </div>
+                </li>
+                <li class="icon-list-item-gd">
+                  <div class="icon-gd">
+                    <i class="fas fa-industry" aria-hidden="true"></i>
+                  </div>
+                  <div class="icon-inf">
+                    <h5>Industries</h5>
+                    <p class="text-para">
+                      Practical and efficient industrial setups.
+                    </p>
+                  </div>
+                </li>
+                <li class="icon-list-item-gd">
+                  <div class="icon-gd">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                  </div>
+                  <div class="icon-inf">
+                    <h5>Office</h5>
+                    <p class="text-para">
+                      Smart workspaces built for productivity.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div class="w3banner-content-btns">
+                <a
+                  href="about.html"
+                  class="btn btn-style btn-primary mt-lg-5 mt-4 me-2"
+                  aria-label="Read more about our services"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- gallery -->
+      <section class="gallery-section" id="gallery">
+        <div class="destionation-innf py-5">
+          <div class="container py-lg-5 py-md-4 py-2 HomePageGallery">
+            <h6 class="gallery-title">Gallery</h6>
+            <h3 class="gallery-subtitle">Latest Projects</h3>
+            <ul class="gallery_agile" role="list">
+              <li>
+                <div class="w3_agile_portfolio_grid">
+                  <a href="gallery.html" aria-label="View Project Gallery">
                     <img
-                      src="/images/asquare-logo.jpg"
-                      alt="ASQUARE Construction Company Logo - Home"
-                      width="150"
-                      height="120"
-                      loading="eager"
-                      class="img-fluid"
+                      src="/images/land-1.avif"
+                      alt="Land Project 1"
+                      loading="lazy"
                     />
                   </a>
                 </div>
-                <p
-                  class="parahny mb-3"
-                  style="line-height: 1.7; max-width: 280px"
+                <div class="w3_agile_portfolio_grid mt-4">
+                  <a href="gallery.html" aria-label="View Project Gallery">
+                    <img
+                      src="/images/construction-1.avif"
+                      alt="Construction 1"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="w3_agile_portfolio_grid">
+                  <a href="gallery.html" aria-label="View Project Gallery">
+                    <img
+                      src="/images/construction-2.avif"
+                      alt="Construction 2"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+                <div class="w3_agile_portfolio_grid mt-4">
+                  <a href="gallery.html" aria-label="View Project Gallery">
+                    <img
+                      src="/images/construction-3.avif"
+                      alt="Construction 3"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="w3_agile_portfolio_grid">
+                  <a href="gallery.html" aria-label="View Project Gallery">
+                    <img
+                      src="/images/land-2.avif"
+                      alt="Land Project 2"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+                <div class="w3_agile_portfolio_grid mt-4">
+                  <a href="gallery.html" aria-label="View Project Gallery">
+                    <img
+                      src="/images/construction-4.avif"
+                      alt="Construction 4"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- stats -->
+      <section class="w3l-midslider py-5" id="midslider">
+        <div class="container py-md-5">
+          <div class="row">
+            <div class="col-lg-5 title-content text-left pe-lg-5 mb-lg-0 mb-5">
+              <div
+                class="heading-wrapper"
+                style="max-width: 100%; margin: 0 auto; padding-left: 0"
+              >
+                <h6
+                  class="title-subw3hny mb-1 text-center"
+                  style="color: #509fe4; display: block"
                 >
-                  A Square Construction, founded in 2014 by Zakir Hussein, is a
-                  trusted construction company delivering high-quality
-                  residential and commercial projects.
+                  Stats
+                </h6>
+                <h3 class="title-w3l mb-3 text-center" style="display: block">
+                  Modern Of Living
+                </h3>
+              </div>
+              <p class="mb-5">
+                A Square construction has built a powerful reputation in the
+                construction industry, delivering top-quality work across
+                residential and commercial projects. With 20+ completed projects
+                and 100+ happy clients,
+              </p>
+              <div class="row w3l-stats-section stats-con mt-4" id="stats">
+                <div class="col-6 stats_info counter_grid">
+                  <p class="counter">20+</p>
+                  <h3>Projects</h3>
+                </div>
+                <div class="col-6 stats_info counter_grid">
+                  <p class="counter">100+</p>
+                  <h3>Happy Clients</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 testimonial-width midslider-width ps-lg-3">
+              <div class="row g-3">
+                <div class="col-6">
+                  <img
+                    src="/images/banner2-800.avif"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    alt="Completed project 1"
+                    class="img-fluid radius-image w-100"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    src="/images/banner3-800.avif"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    alt="Completed project 2"
+                    class="img-fluid radius-image w-100"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- blog -->
+      <section
+        class="w3l-text-11 py-5 pt-0"
+        style="font-family: 'Poppins', sans-serif"
+      >
+        <div class="text11 py-md-5 py-2 pt-0">
+          <div class="container-fluid p-0">
+            <div
+              class="title-content force-perfect-center blog-section-title mb-5 py-4"
+            >
+              <h6
+                class="text-uppercase letter-spacing-2 fw-bold mb-2"
+                style="color: #509fe4; font-size: 0.95rem"
+              >
+                Our Insights
+              </h6>
+              <h3
+                class="fw-bold"
+                style="
+                  color: #1a1a1a;
+                  font-size: 2.8rem;
+                  margin: 0;
+                  line-height: 1.2;
+                "
+              >
+                Latest Blog Posts
+              </h3>
+            </div>
+            <div class="row text11-content g-4">
+              <div class="col-lg-4 mt-5">
+                <div
+                  class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
+                  style="font-family: 'Poppins', sans-serif"
+                >
+                  <div class="card-header p-0 position-relative border-0">
+                    <div class="blog-img-container overflow-hidden">
+                      <img
+                        class="card-img-bottom d-block radius-image w-100"
+                        src="/images/g7.avif"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        alt="Modern interior design"
+                        class="img-fluid radius-image"
+                        style="height: 250px; object-fit: cover"
+                      />
+                      <div
+                        class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
+                        style="font-family: 'Poppins', sans-serif"
+                      >
+                        Jan 23, 2021
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4 blog-details">
+                    <div class="blog-meta mb-2">
+                      <span
+                        class="admin"
+                        style="color: #888; font-family: 'Poppins', sans-serif"
+                        ><i class="fas fa-user me-1" aria-hidden="true"></i>by
+                        Admin</span
+                      >
+                    </div>
+                    <h4
+                      class="blog-title mb-3 fw-bold"
+                      style="
+                        font-size: 1.3rem;
+                        line-height: 1.4;
+                        color: #1a1a1a;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      10 Things I Wish I Knew Before Building My First Home
+                    </h4>
+                    <div class="blog-content-divider mb-3"></div>
+                    <p
+                      class="blog-excerpt mb-0"
+                      style="
+                        line-height: 1.7;
+                        font-size: 0.95rem;
+                        color: #555;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      Learn to manage decisions, communicate effectively, handle
+                      delays, and stay resilient from homeowners who've been
+                      through the build process.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mt-5">
+                <div
+                  class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
+                  style="font-family: 'Poppins', sans-serif"
+                >
+                  <div class="card-header p-0 position-relative border-0">
+                    <div class="blog-img-container overflow-hidden">
+                      <img
+                        class="card-img-bottom d-block radius-image w-100"
+                        src="/images/g8.avif"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        alt="Modern interior design"
+                        class="img-fluid radius-image"
+                        style="height: 250px; object-fit: cover"
+                      />
+
+                      <div
+                        class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
+                        style="font-family: 'Poppins', sans-serif"
+                      >
+                        Feb 18, 2022
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4 blog-details">
+                    <div class="blog-meta mb-2">
+                      <span
+                        class="admin"
+                        style="color: #888; font-family: 'Poppins', sans-serif"
+                        ><i class="fas fa-user me-1" aria-hidden="true"></i>by
+                        Admin</span
+                      >
+                    </div>
+                    <h4
+                      class="blog-title mb-3 fw-bold"
+                      style="
+                        font-size: 1.3rem;
+                        line-height: 1.4;
+                        color: #1a1a1a;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      The Complete Step-by-Step Guide to Building Your Dream
+                      Home
+                    </h4>
+                    <div class="blog-content-divider mb-3"></div>
+                    <p
+                      class="blog-excerpt mb-0"
+                      style="
+                        line-height: 1.7;
+                        font-size: 0.95rem;
+                        color: #555;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      Navigate from initial sketches to final walkthrough with
+                      our 12-month timeline, designed to ensure your vision
+                      becomes reality seamlessly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mt-5">
+                <div
+                  class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden blog-card"
+                  style="font-family: 'Poppins', sans-serif"
+                >
+                  <div class="card-header p-0 position-relative border-0">
+                    <div class="blog-img-container overflow-hidden">
+                      <img
+                        class="card-img-bottom d-block radius-image w-100"
+                        src="/images/g6.avif"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        alt="Modern interior design"
+                        class="img-fluid radius-image"
+                        style="height: 250px; object-fit: cover"
+                      />
+
+                      <div
+                        class="blog-date position-absolute top-0 start-0 bg-white text-dark px-3 py-2 m-3 rounded-2 fw-bold"
+                        style="font-family: 'Poppins', sans-serif"
+                      >
+                        Dec 31, 2024
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-4 blog-details">
+                    <div class="blog-meta mb-2">
+                      <span
+                        class="admin"
+                        style="color: #888; font-family: 'Poppins', sans-serif"
+                        ><i class="fas fa-user me-1" aria-hidden="true"></i>by
+                        Admin</span
+                      >
+                    </div>
+                    <h4
+                      class="blog-title mb-3 fw-bold"
+                      style="
+                        font-size: 1.3rem;
+                        line-height: 1.4;
+                        color: #1a1a1a;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      Modern Kitchen Renovation Ideas to Enhance Space &
+                      Functionality
+                    </h4>
+                    <div class="blog-content-divider mb-3"></div>
+                    <p
+                      class="blog-excerpt mb-0"
+                      style="
+                        line-height: 1.7;
+                        font-size: 0.95rem;
+                        color: #555;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      A-Square Construction specializes in modular kitchen
+                      layouts, seamless cabinetry, premium countertops, and
+                      space-saving designs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- cta -->
+      <section class="w3l-join-main py-5">
+        <div class="container py-md-3">
+          <div class="w3l-project-in">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="bottom-info">
+                  <div class="header-section pe-lg-5">
+                    <h5 class="title-subw3hny mb-3">Get Consultation</h5>
+                    <h3 class="title-w3l mb-3">
+                      GET INCREDIBLE PROJECT ESTIMATION & CONSULTATION FOR FREE
+                    </h3>
+                    <p>
+                      At every stage, we oversee your project—managing every
+                      detail and providing expert guidance to the builders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 align-self mt-lg-0 mt-sm-5 mt-4">
+                <div class="w3l-buttons d-sm-flex justify-content-end">
+                  <a
+                    href="tel:+91 9940792792"
+                    aria-label="Call now for a consultation"
+                    class="btn btn-style transparant-btn ms-sm-2"
+                    >Call Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonials -->
+      <section class="w3l-testimonials" id="testimonials">
+        <div class="cusrtomer-layout py-5">
+          <div class="container-fluid py-lg-4 py-md-3 py-2 pb-lg-0">
+            <div class="title-content force-perfect-center mb-5 py-4">
+              <h6
+                class="text-uppercase letter-spacing-2 fw-bold mb-3"
+                style="color: #509fe4; font-size: 0.95rem"
+              >
+                Testimonials
+              </h6>
+              <h3
+                class="fw-bold"
+                style="
+                  color: #1a1a1a;
+                  font-size: 2.8rem;
+                  margin: 0;
+                  line-height: 1.3;
+                  max-width: 900px;
+                "
+              >
+                What some of our happy clients<br class="d-block d-lg-none" />
+                say about us
+              </h3>
+            </div>
+            <div class="testimonial-width">
+              <div class="row justify-content-center">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="testimonial-content">
+                    <div class="testimonial">
+                      <div class="testimonial-gds-1">
+                        <div class="testi-des">
+                          <div class="peopl align-self">
+                            <h3>Ameena Zak</h3>
+                            <p class="indentity">Krishnagiri</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="quote-info">
+                        <i class="fas fa-quote-left me-2" aria-hidden="true"></i
+                        >Doing amazing, everything is unique with neat work and
+                        also customising as per our wish, simply go ahead,worth
+                        for money , moreover trustworthy dolore.<i
+                          class="fas fa-quote-right ms-2"
+                          aria-hidden="true"
+                        ></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="testimonial-content">
+                    <div class="testimonial">
+                      <div class="testimonial-gds-1">
+                        <div class="testi-des">
+                          <div class="peopl align-self">
+                            <h3>Zakir Khan</h3>
+                            <p class="indentity">Krishnagiri</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="quote-info">
+                        <i class="fas fa-quote-left me-2" aria-hidden="true"></i
+                        >Nice Work.<i
+                          class="fas fa-quote-right ms-2"
+                          aria-hidden="true"
+                        ></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="testimonial-content">
+                    <div class="testimonial">
+                      <div class="testimonial-gds-1">
+                        <div class="testi-des">
+                          <div class="peopl align-self">
+                            <h3>Ayub Khan</h3>
+                            <p class="indentity">Bangalore</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="quote-info">
+                        <i class="fas fa-quote-left me-2" aria-hidden="true"></i
+                        >We hired Asquare Constructions for a turnkey renovation
+                        project, and the entire process was smooth—from design
+                        to final handover. Excellent quality, great attention to
+                        detail. Highly recommended in Krishnagiri.<i
+                          class="fas fa-quote-right ms-2"
+                          aria-hidden="true"
+                        ></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer class="w3l-footer-29-main">
+        <div class="footer-29 py-4 w-100">
+          <div class="container-fluid px-0">
+            <div
+              class="row footer-top-29 mx-0 gx-0 gy-4 justify-content-center"
+            >
+              <!-- About Section -->
+              <div
+                class="col-12 col-lg-3 footer-list-29 footer-1 d-flex justify-content-center justify-content-lg-start ps-lg-4 ps-xl-5"
+              >
+                <div class="text-lg-start">
+                  <div class="mb-3 text-center">
+                    <a
+                      class="navbar-brand text-decoration-none d-inline-block"
+                      href="index.html"
+                      aria-label="ASQUARE Construction Company Home"
+                    >
+                      <img
+                        src="/images/asquare-logo.jpg"
+                        alt="ASQUARE Construction Company Logo - Home"
+                        width="150"
+                        height="120"
+                        loading="eager"
+                        class="img-fluid"
+                      />
+                    </a>
+                  </div>
+                  <p
+                    class="parahny mb-3"
+                    style="line-height: 1.7; max-width: 280px"
+                  >
+                    A Square Construction, founded in 2014 by Zakir Hussein, is
+                    a trusted construction company delivering high-quality
+                    residential and commercial projects.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Get in Touch -->
+              <div
+                class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-2 px-3"
+              >
+                <h6 class="footer-title-29 mb-3">Get In Touch</h6>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-2">
+                    <i
+                      class="fas fa-map-marker-alt me-2 mt-1 text-white flex-shrink-0"
+                    ></i>
+                    <address
+                      class="text-white mb-0"
+                      style="line-height: 1.6; font-style: normal"
+                    >
+                      Phase 2, TNHB, MIG-128,<br />
+                      near Vedikaa Child Care Hospital,<br />
+                      Wahab Nagar, Krishnagiri,<br />
+                      Tamil Nadu 635001
+                    </address>
+                  </li>
+                  <li class="d-flex mb-2 align-items-center">
+                    <i
+                      class="fas fa-phone-alt me-2 text-white flex-shrink-0"
+                    ></i>
+                    <span class="text-white">+91 9940792792</span>
+                  </li>
+                  <li class="d-flex mb-2 align-items-center">
+                    <i
+                      class="fas fa-envelope me-2 text-white flex-shrink-0"
+                    ></i>
+                    <span class="text-white"
+                      >asquareconstruction12@gmail.com</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Top Services -->
+              <div
+                class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-3 px-3"
+              >
+                <h6 class="footer-title-29 mb-3">Our Top Services</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2 d-flex align-items-center">
+                    <i class="fas fa-drafting-compass me-2 text-white"></i>
+                    <span class="text-white text-nowrap">Plan 2D & 3D</span>
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <i class="fas fa-cube me-2 text-white"></i>
+                    <span class="text-white text-nowrap">Structure Design</span>
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <i class="fas fa-paint-roller me-2 text-white"></i>
+                    <span class="text-white text-nowrap"
+                      >Interior & Exterior Design</span
+                    >
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <i class="fas fa-tools me-2 text-white"></i>
+                    <span class="text-white text-nowrap"
+                      >Building Renovation</span
+                    >
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <i class="fas fa-building me-2 text-white"></i>
+                    <span class="text-white text-nowrap"
+                      >Architectural Design</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Links -->
+              <div
+                class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-4 px-3"
+              >
+                <h6 class="footer-title-29 mb-3">Keep Connected</h6>
+                <p class="text-white mb-3" style="line-height: 1.6">
+                  Get Updates By Following Us On Social Media
+                </p>
+                <div class="main-social-footer-29">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61581026489552"
+                    target="_blank"
+                    class="me-3 text-decoration-none"
+                    aria-label="Facebook"
+                  >
+                    <span class="fab fa-facebook-f text-white fs-5"></span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/a_square__constructions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="text-decoration-none"
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
+                    <span class="fab fa-instagram text-white fs-5"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="bottom-copies pt-3 mt-4 border-top">
+              <div
+                class="d-flex justify-content-between align-items-center px-3 px-md-4"
+              >
+                <!-- Left side: Copyright -->
+                <p class="copy-footer-29 text-white mb-0">
+                  © <span id="current-year"></span> ASQUARE. All rights
+                  reserved.
+                </p>
+
+                <!-- Right side: Credit with link -->
+                <p class="copy-footer-29 text-white mb-0">
+                  Crafted with ❤️ By
+                  <a
+                    href="https://coderzweb.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white text-decoration-none hover-text"
+                  >
+                    <b>CoderzWeb</b>
+                  </a>
                 </p>
               </div>
             </div>
 
-            <!-- Get in Touch -->
-            <div class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-2 px-3">
-              <h6 class="footer-title-29 mb-3 text-warning">Get In Touch</h6>
-              <ul class="list-unstyled">
-                <li class="d-flex mb-2">
-                  <i
-                    class="fas fa-map-marker-alt me-2 mt-1 text-white flex-shrink-0"
-                  ></i>
-                  <address
-                    class="text-white mb-0"
-                    style="line-height: 1.6; font-style: normal"
-                  >
-                    Phase 2, TNHB, MIG-128,<br />
-                    near Vedikaa Child Care Hospital,<br />
-                    Wahab Nagar, Krishnagiri,<br />
-                    Tamil Nadu 635001
-                  </address>
-                </li>
-                <li class="d-flex mb-2 align-items-center">
-                  <i class="fas fa-phone-alt me-2 text-white flex-shrink-0"></i>
-                  <span class="text-white">+91 9940792792</span>
-                </li>
-                <li class="d-flex mb-2 align-items-center">
-                  <i class="fas fa-envelope me-2 text-white flex-shrink-0"></i>
-                  <span class="text-white"
-                    >asquareconstruction12@gmail.com</span
-                  >
-                </li>
-              </ul>
-            </div>
+            <script>
+              document.getElementById("current-year").textContent =
+                new Date().getFullYear();
+            </script>
 
-            <!-- Top Services -->
-            <div class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-3 px-3">
-              <h6 class="footer-title-29 mb-3 text-warning">
-                Our Top Services
-              </h6>
-              <ul class="list-unstyled">
-                <li class="mb-2 d-flex align-items-center">
-                  <i class="fas fa-drafting-compass me-2 text-white"></i>
-                  <span class="text-white text-nowrap">Plan 2D & 3D</span>
-                </li>
-                <li class="mb-2 d-flex align-items-center">
-                  <i class="fas fa-cube me-2 text-white"></i>
-                  <span class="text-white text-nowrap">Structure Design</span>
-                </li>
-                <li class="mb-2 d-flex align-items-center">
-                  <i class="fas fa-paint-roller me-2 text-white"></i>
-                  <span class="text-white text-nowrap"
-                    >Interior & Exterior Design</span
-                  >
-                </li>
-                <li class="mb-2 d-flex align-items-center">
-                  <i class="fas fa-tools me-2 text-white"></i>
-                  <span class="text-white text-nowrap"
-                    >Building Renovation</span
-                  >
-                </li>
-                <li class="mb-2 d-flex align-items-center">
-                  <i class="fas fa-building me-2 text-white"></i>
-                  <span class="text-white text-nowrap"
-                    >Architectural Design</span
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Social Links -->
-            <div class="col-12 col-sm-6 col-lg-3 footer-list-29 footer-4 px-3">
-              <h6 class="footer-title-29 mb-3 text-warning">Keep Connected</h6>
-              <p class="text-white mb-3" style="line-height: 1.6">
-                Get Updates By Following Us On Social Media
-              </p>
-              <div class="main-social-footer-29">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61581026489552"
-                  target="_blank"
-                  class="me-3 text-decoration-none"
-                  aria-label="Facebook"
-                >
-                  <span class="fab fa-facebook-f text-white fs-5"></span>
-                </a>
-                <a
-                  href="https://www.instagram.com/a_square__constructions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                  class="text-decoration-none"
-                  target="_blank"
-                  aria-label="Instagram"
-                >
-                  <span class="fab fa-instagram text-white fs-5"></span>
-                </a>
-              </div>
-            </div>
+            <script>
+              document.getElementById("current-year").textContent =
+                new Date().getFullYear();
+            </script>
           </div>
-
-          <!-- Copyright -->
-          <div class="bottom-copies pt-3 mt-4 border-top">
-            <div
-              class="d-flex justify-content-between align-items-center px-3 px-md-4"
-            >
-              <!-- Left side: Copyright -->
-              <p class="copy-footer-29 text-white mb-0">
-                © <span id="current-year"></span> ASQUARE. All rights reserved.
-              </p>
-
-              <!-- Right side: Credit with link -->
-              <p class="copy-footer-29 text-white mb-0">
-                Crafted with ❤️ By
-                <a
-                  href="https://coderzweb.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-white text-decoration-none hover-text"
-                >
-                  <b>CoderzWeb</b>
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <script>
-            document.getElementById("current-year").textContent =
-              new Date().getFullYear();
-          </script>
-
-          <script>
-            document.getElementById("current-year").textContent =
-              new Date().getFullYear();
-          </script>
         </div>
-      </div>
 
-      <!-- Back to Top Button -->
-      <button
-        onclick="topFunction()"
-        id="movetop"
-        title="Go to top"
-        class="btn btn-outline-light rounded-circle position-fixed bottom-0 end-0 m-3"
-        aria-label="Go to top"
-      >
-        <span class="fa fa-angle-up"></span>
-      </button>
-    </footer>
-  </div>
-   
-  
+        <!-- Back to Top Button -->
+        <button
+          onclick="topFunction()"
+          id="movetop"
+          title="Go to top"
+          class="btn btn-outline-light rounded-circle position-fixed bottom-0 end-0 m-3"
+          aria-label="Go to top"
+        >
+          <span class="fa fa-angle-up"></span>
+        </button>
+      </footer>
+    </div>
+
+    <a
+      href="https://api.whatsapp.com/send?phone=919940792792&text=Can i know more about your offers and packages from your website?"
+      target="_blank"
+      class="back-to-whatsApp"
+      style="
+        background-color: #25d366;
+        color: white;
+        border: none;
+        padding: 10px;
+      "
+    >
+      <i class="fab fa-whatsapp" style="font-size: 45px"></i>
+    </a>
 
     <!-- ====== SCRIPTS WITH DEFER ====== -->
     <script src="/js/jquery-3.3.1.min.js" defer></script>

@@ -1123,6 +1123,35 @@ textarea {
     font-size: 24px
 }
 
+/* Mobile view fix for whatsapp notice */
+@media (max-width: 768px) {
+  .whatsapp-notice {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important; /* Changed from center to flex-start */
+    gap: 12px !important;
+    padding: 15px !important;
+    margin-top: 20px !important;
+  }
+  
+  .whatsapp-notice i {
+    flex-shrink: 0 !important; /* Prevent icon from shrinking */
+    margin-top: 2px !important; /* Align icon with first line of text */
+    font-size: 22px !important;
+  }
+  
+  .whatsapp-notice div {
+    flex: 1 !important; /* Take remaining space */
+    text-align: left !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .whatsapp-notice strong {
+    display: inline !important;
+  }
+}
+
 @media (max-width:768px) {
     .hero {
         min-height: 350px
@@ -4785,7 +4814,7 @@ a.btn.btn-style.btn-banner:hover {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #509FE4;
+    color: white;
     text-decoration: underline;
     margin-bottom: 15px;
     font-weight: 600;
@@ -8222,16 +8251,16 @@ body {
 /* chatbot */
 #asquare-chatbot-widget {
     position: fixed !important;
-    right: 20px !important;
-    bottom: 20px !important;
+    right: 30px !important;
+    bottom: 50px !important;
     z-index: 999999 !important;
     transform: scale(.85) !important;
     transform-origin: bottom right !important
 }
 
 .asquare-chat-icon {
-    width: 52px !important;
-    height: 52px !important;
+    width: 62px !important;
+    height: 62px !important;
     background: #509FE4 !important;
     border-radius: 50% !important;
     display: flex;
@@ -8760,6 +8789,63 @@ body {
     border: none !important
 }
 
+
+@media (max-width: 768px) {
+  .contact-section .contact-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+  
+  .contact-section .contact-icon {
+    flex-shrink: 0 !important;
+    margin-right: 15px !important;
+    margin-top: 3px !important;
+  }
+  
+  .contact-section .contact-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    /* NEW: Prevent text container from being too narrow */
+    width: calc(100% - 55px) !important; /* 40px icon + 15px margin */
+  }
+  
+  .contact-section .contact-text h4,
+  .contact-section .contact-text p {
+    text-align: left !important;
+    width: 100% !important; /* CHANGED: from auto to 100% */
+    max-width: 100% !important; /* NEW: Ensure full width */
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+  }
+  
+  /* Specifically for paragraph text */
+  .contact-section .contact-text p {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    /* NEW: Fix for long email addresses */
+    word-break: break-word !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+  
+  /* NEW: Specifically target the email address item */
+  .contact-item:nth-child(3) .contact-text p,
+  .contact-item:last-child .contact-text p {
+    word-break: break-all !important; /* Force break long emails */
+    hyphens: auto !important;
+  }
+  
+  /* NEW: Ensure no parent container is clipping */
+  .contact-details,
+  .contact-item,
+  .contact-text {
+    overflow: visible !important;
+  }
+}
 .contact-section {
     overflow-x: hidden
 }
@@ -9386,4 +9472,43 @@ body {
 
 .asquare-chat-icon.hidden {
     display: none !important;
+}
+
+.back-to-whatsApp {
+    width: 50px; /* Increased size */
+    height: 50px; /* Increased size */
+    position: fixed;
+    left: 30px;
+    bottom: 50px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    text-decoration: none !important;
+    background-color: #25d366 !important;
+    color: white !important;
+    /* Animation properties removed */
+    animation: none !important;
+}
+
+/* Fix the icon size and positioning */
+.back-to-whatsApp i {
+    font-size: 62px !important; /* Increased to match larger button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hover effect only */
+.back-to-whatsApp:hover {
+    background-color: #1da851 !important;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
