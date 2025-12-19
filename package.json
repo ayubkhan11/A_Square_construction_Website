@@ -1,7 +1,7 @@
 {
   "name": "asquareconstruction",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Square Construction Company Website",
   "homepage": "https://github.com/ayubkhan11/A_Square_construction_Website#readme",
   "bugs": {
     "url": "https://github.com/ayubkhan11/A_Square_construction_Website/issues"
@@ -11,15 +11,12 @@
     "url": "git+https://github.com/ayubkhan11/A_Square_construction_Website.git"
   },
   "license": "ISC",
-  "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "css:purge": "purgecss --css assets/css/*.css --content *.html **/*.html **/*.js --output assets/css/",
-    "css:minify": "cleancss -o assets/css/style.min.css assets/css/style.css",
-    "purgecss": "purgecss --config ./purgecss.config.js",
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "vercel-build": "echo 'Building Express.js app' && node -v"
   },
   "devDependencies": {
     "purgecss": "^7.0.2"
@@ -39,5 +36,8 @@
     "html",
     "css",
     "javascript"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.x"
+  }
 }
