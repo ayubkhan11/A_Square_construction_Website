@@ -41,9 +41,9 @@ Rules:
 - if ask for meeting or schedule a meeting then share zakir's contact details and office address"
 
 Contact Details (use exactly):
-Phone & WhatsApp: +91 97896 54321
+Phone & WhatsApp: +91 9940792792
 Email: asquareconstruction12@gmail.com
-Website: asquare-constructions.in
+Website: https://a-square-construction.vercel.app
 
 Reply in a natural, South Indian professional tone.`;
 
@@ -70,7 +70,7 @@ const processChat = async (message, sessionId = "default") => {
     return aiReply;
   } catch (error) {
     console.error("AI Error:", error.message);
-    return "Sorry, I'm having a technical issue right now. Please call us directly at +91 97896 54321 – we'll be happy to help!";
+    return "Sorry, I'm having a technical issue right now. Please call us directly at +91 9940792792 – we'll be happy to help!";
   }
 };
 
@@ -108,14 +108,19 @@ router.post("/chat", async (req, res) => {
       success: false,
       error: "Internal server error",
       message: error.message,
-      suggestion: "Please call +91 97896 54321 for immediate assistance"
+      suggestion: "Please call +91 9940792792 for immediate assistance"
     });
   }
 });
 
 // Optional: health check
 router.get("/status", (req, res) => {
-  res.json({ status: "A Square Construction Chatbot → Online", sessions: chatHistories.size });
+  res.json({ 
+    status: "A Square Construction Chatbot → Online", 
+    sessions: chatHistories.size,
+    phone: "+91 9940792792",
+    company: "A Square Construction"
+  });
 });
 
 export default router;
